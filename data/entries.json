@@ -1,0 +1,864 @@
+{
+ "version": 2,
+ "categories": [
+  "Controls",
+  "Numbers & data",
+  "Text",
+  "Sheets & navigation",
+  "Media & scenes",
+  "Cursor & hover"
+ ],
+ "entries": [
+  {
+   "slug": "voice-vortex",
+   "name": "Voice vortex",
+   "category": "Controls",
+   "tags": [
+    "feedback",
+    "loading"
+   ],
+   "from": "Voice assistant",
+   "source": "Interactive studio",
+   "description": "A soft spectral ring breathes around the mic. Hold it: the ring swells to 118%, spins three times faster and pulses like a live voice. Let go and it springs back.",
+   "hint": "Press and hold",
+   "spec": {
+    "Swell": "spring k160 · c18 · 1 → 1.18",
+    "Spin": "60°/s · ×3 while listening",
+    "Voice pulse": "±4% · three summed sines",
+    "Blur": "18 px · ×0.7 while listening"
+   },
+   "file": "VoiceVortex.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  swell: { type: 'spring', stiffness: 160, damping: 18, mass: 1 }, // grow on hold, settle on release\n  speed: 10,  // tenths of the base spin (1.0×)\n  boost: 3,   // spin multiplier while listening\n  size: 118,  // % the ring grows to while held\n  blur: 18, palette: 0,\n}"
+  },
+  {
+   "slug": "rotary-deck",
+   "name": "Rotary deck",
+   "category": "Media & scenes",
+   "tags": [
+    "media",
+    "storytelling"
+   ],
+   "from": "Editorial hero",
+   "source": "Interactive studio",
+   "description": "Cards fan on a circle behind the headline and turn slowly. Drag to spin: the deck coasts on release, a fast drag fans it wider and it springs back. Cards turning away fade.",
+   "hint": "Drag sideways",
+   "spec": {
+    "Fan": "250° across 11 cards",
+    "Spin": "22°/s auto · momentum 900 ms",
+    "Fan return": "spring k120 · c16",
+    "Back cards": "opacity by cos(angle)"
+   },
+   "file": "RotaryDeck.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  fanBack: { type: 'spring', stiffness: 120, damping: 16, mass: 1 }, // the extra fan from a fast drag settling back\n  coast: 900, // ms of spin momentum after release\n  fan: 250, spacing: 36, persp: 1200, spin: 22, auto: 1,\n}"
+  },
+  {
+   "slug": "ai-aura-input",
+   "name": "AI aura input",
+   "category": "Controls",
+   "tags": [
+    "forms",
+    "loading"
+   ],
+   "from": "AI assistant",
+   "source": "Interactive studio",
+   "description": "The prompt bar glows brightest on one side and that peak swings toward the pointer. Focus lifts it; Enter sends the aura round the pill while it thinks, then the answer card unfolds from under the bar on a spring.",
+   "hint": "Hover, type, Enter",
+   "spec": {
+    "Aura swing": "spring k40 · c11",
+    "Thinking": "1.4 turns/s · 1500 ms",
+    "Answer": "spring k170 · c24 · drop 14 px · scale .94 → 1 · blur 8 → 0",
+    "Text": "spring k120 · c20 · trails the card",
+    "Idle": "glow breathes 0.78–1"
+   },
+   "file": "AuraInput.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  magnet: { type: 'spring', stiffness: 40, damping: 11, mass: 1 }, // how the bright side swings to the pointer\n  think: 1500,  // ms the aura orbits before the answer\n  rise: { type: 'spring', stiffness: 170, damping: 24, mass: 1 }, // answer card in (ζ ≈ 0.92: settles, no visible bounce)\n  decode: 14,   // ms between letters as the reply decodes\n  orbit: 14,    // tenths of a turn per second while thinking (1.4 turns/s)\n  theme: 0, bezel: 8, glow: 60, follow: 1,\n}"
+  },
+  {
+   "slug": "glass-grid",
+   "name": "Glass grid",
+   "category": "Cursor & hover",
+   "tags": [
+    "hover",
+    "feedback"
+   ],
+   "from": "Ambient surface",
+   "source": "Interactive studio",
+   "description": "Three blurred lights sit under 72 frosted tiles and lean toward the pointer. Drag to paint them under your finger; tap a tile and a ripple runs out through the grid by distance.",
+   "hint": "Move, tap, drag",
+   "spec": {
+    "Light follow": "spring k60 · c14",
+    "Paint": "spring k170 · c22",
+    "Ripple": "560 ms ENT · 46 ms per tile",
+    "Press": "scale .91 at the source"
+   },
+   "file": "GlassGrid.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  follow: { type: 'spring', stiffness: 60, damping: 14, mass: 1 },  // lights drifting toward the pointer\n  paint: { type: 'spring', stiffness: 170, damping: 22, mass: 1 },  // lights under a dragging finger\n  ripple: 560, // ms one tile takes to dip and return\n  wave: 46,    // ms per tile of distance from the press\n  depth: 9,    // % the pressed tile sinks (scale 1 → .91)\n  palette: 0, diffusion: 60, frost: 55, gap: 3, drift: 1,\n}"
+  },
+  {
+   "slug": "acrylic-arc",
+   "name": "Acrylic card arc",
+   "category": "Media & scenes",
+   "tags": [
+    "media",
+    "navigation"
+   ],
+   "from": "Collectibles gallery",
+   "source": "Interactive studio",
+   "description": "Sixteen acrylic cards on a curve, out-of-focus by distance. Drag or scroll to turn the set, tap a side card to bring it to the centre, tap the centre card to lift it and tilt it with the pointer.",
+   "hint": "Drag, scroll, tap",
+   "spec": {
+    "Turn / settle": "spring k170 · c26",
+    "Lift": "spring k300 · c26 · +70 px Z",
+    "Momentum": "420 ms",
+    "Depth blur": "0 → 4 px over 5 cards"
+   },
+   "file": "AcrylicArc.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [
+    "/img/gal/gal-01.webp",
+    "/img/gal/gal-02.webp",
+    "/img/gal/gal-03.webp",
+    "/img/gal/gal-04.webp",
+    "/img/gal/gal-05.webp",
+    "/img/gal/gal-06.webp",
+    "/img/gal/gal-07.webp",
+    "/img/gal/gal-08.webp",
+    "/img/gal/gal-09.webp",
+    "/img/gal/gal-10.webp",
+    "/img/gal/gal-11.webp",
+    "/img/gal/gal-12.webp",
+    "/img/gal/gal-13.webp"
+   ],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  focus: { type: 'spring', stiffness: 170, damping: 26, mass: 1 }, // turning to a tapped card / settling\n  lift: { type: 'spring', stiffness: 300, damping: 26, mass: 1 },  // centre card lifting out\n  coast: 420, // ms of drag momentum before it settles\n  mode: 0, curve: 42, spread: 104, pitch: 6, dof: 4, rim: 70, sweep: 0,\n}"
+  },
+  {
+   "slug": "glyph-matrix",
+   "name": "Glyph matrix",
+   "category": "Media & scenes",
+   "tags": [
+    "storytelling",
+    "hover",
+    "media"
+   ],
+   "from": "Generative hero",
+   "source": "Interactive studio",
+   "description": "A subject is sampled for brightness and redrawn every frame out of glyphs. The butterfly breathes, characters shimmer, glyphs part around the pointer and a press sends a shockwave through the field. Swap the glyph set from the dock, or upload your own image.",
+   "hint": "Move, press, hold",
+   "spec": {
+    "Grid": "9 px cells · canvas 60 fps",
+    "Flutter": "wings fold up to 16% · 2.2 rad/s",
+    "Shockwave": "900 ms · 260 px/s front",
+    "Hold": "new wave every 380 ms",
+    "Glyph sets": "5"
+   },
+   "file": "GlyphMatrix.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  shock: 900,   // ms one shockwave takes to cross the field\n  density: 9,   // px per cell\n  wave: 50, force: 60, glow: 40, grain: 25,\n  subject: 0, set: 0, palette: 0, split: 0, invert: 0, contrast: 60, dark: 0,\n}"
+  },
+  {
+   "slug": "globe-telemetry",
+   "name": "Dotted globe telemetry",
+   "category": "Numbers & data",
+   "tags": [
+    "data",
+    "storytelling"
+   ],
+   "from": "Network dashboard",
+   "source": "Interactive studio",
+   "description": "A Fibonacci-lattice globe of 3,200 dots, land kept and the ocean thinned to a graticule, lit and sized by depth. Drag it on both axes and it coasts, then drifts. Six data overlays ride the rotation: node pills, great-circle arcs with packets, radar beacons on an obsidian sphere, edge-tower load cards, rim weather badges and a low-orbit mesh.",
+   "hint": "Drag to spin",
+   "spec": {
+    "Lattice": "Fibonacci · 3,200 points · ocean every 11th",
+    "Depth": "radius 1.05 + z × 1.15 · alpha 0.14 + z × 0.72",
+    "Momentum": "vel × 0.04^dt",
+    "Drift": "0.35× spin",
+    "Arcs": "altitude 1 + sin(fπ) × 0.22",
+    "Focus": "spring k60 · c14"
+   },
+   "file": "GlobeTelemetry.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  focus: { type: 'spring', stiffness: 60, damping: 14, mass: 1 }, // camera swing to a focus region\n  coast: 420,  // ms of drag momentum (vel × 0.04^dt, scaled)\n  spin: 35, density: 3200, bloom: 60, drift: 1, mode: 0, region: 0, dark: 0,\n}"
+  },
+  {
+   "slug": "gooey-voice",
+   "name": "Liquid voice split button",
+   "category": "Controls",
+   "tags": [
+    "forms",
+    "feedback"
+   ],
+   "from": "Voice input",
+   "source": "Interactive studio",
+   "description": "Tap the mic: the light capsule springs out into a live waveform pill while the cancel droplet is pushed out to the right and settles beside it, still joined by a thin liquid neck. Tap the pill to send, or tap × and the droplet is drawn back in and the two merge into one circle. An SVG metaball filter shapes the hulls; icons, bars and timer stay sharp on top.",
+   "hint": "Tap the mic",
+   "spec": {
+    "Capsule": "64 → 150 px · spring k260 · c22",
+    "Droplet": "52 px · +104 px · spring k170 · c15 · neck stays",
+    "Material": "gradient + sheen + traced rim + drop shadow",
+    "Goo": "blur 11 · alpha × 22 − 9",
+    "Bars": "5 · summed sines",
+    "Timer": "tabular 0:00"
+   },
+   "file": "GooeyVoice.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  capsule: { type: 'spring', stiffness: 260, damping: 22, mass: 1 }, // main pill 64 → 168 px\n  droplet: { type: 'spring', stiffness: 170, damping: 15, mass: 1 }, // cancel droplet eject / retract (lags → bridge)\n  eject: 104,   // px the cancel droplet travels right — close enough that a liquid neck stays at rest\n  goo: 11,      // feGaussianBlur stdDeviation\n  bars: 5, tone: 0, dark: 0, wave: 0,\n}"
+  },
+  {
+   "slug": "swiss-stack",
+   "name": "Swiss card stack",
+   "category": "Media & scenes",
+   "tags": [
+    "media",
+    "navigation"
+   ],
+   "from": "Editorial collection",
+   "source": "Interactive studio",
+   "description": "Six editorial cards in one cascading stack. Drag it 1:1: the rear cards spread like an accordion and the front card tilts with the pull. Flick and the release is projected to the nearest card; the front card dips on an arc and tucks behind the deck.",
+   "hint": "Drag, scroll, flick",
+   "spec": {
+    "Snap": "spring k110 · c19.5 · ×tension, c×√tension",
+    "Drag": "175 px per card · follow 1 − e^(−38·dt)",
+    "Flick": "index + velocity × 0.14 → round",
+    "Cascade": "24 px · taper 0.085 · min scale 0.64",
+    "Wrap": "smoothstep + sin arc 98 px · z flips at 0.48",
+    "Depth blur": "(d − 0.35) × 0.55 px"
+   },
+   "file": "SwissStack.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  snap: { type: 'spring', stiffness: 110, damping: 19.5, mass: 1 }, // release snap (×tension, damping ×√tension)\n  dwell: 2600,  // ms the deck rests before Auto cycle deals the next card\n  spread: 24,   // px between stacked card tops\n  taper: 0.085, // scale lost per card of depth\n  tension: 1,   // spring tension multiplier\n  auto: 1,\n}"
+  },
+  {
+   "slug": "optical-agent",
+   "name": "Dual-lens agent",
+   "category": "Controls",
+   "tags": [
+    "forms",
+    "loading"
+   ],
+   "from": "AI agent",
+   "source": "Interactive studio",
+   "description": "Two glass lenses orbit on a figure-eight above a frosted card while a pearl light leak on the left rim follows the pointer. Ask something: the lenses tighten, the status words light up letter by letter, then the lenses merge into one bright core.",
+   "hint": "Ask, or tap a chip",
+   "spec": {
+    "Orbit": "lemniscate · ×2.2 while thinking",
+    "Lens merge": "spring k140 · c14",
+    "Rim follow": "spring k90 · c16",
+    "Thinking": "2700 ms · 3 status words",
+    "Orb blur": "6.5 px"
+   },
+   "file": "OpticalAgent.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  rim: { type: 'spring', stiffness: 90, damping: 16, mass: 1 },     // left rim light following the pointer's height\n  merge: { type: 'spring', stiffness: 140, damping: 14, mass: 1 },  // lens gap opening / closing between states\n  think: 2700,  // ms from send to Complete (three status words)\n  orbit: 10,    // tenths of the base orbit speed (1.0×)\n  sweep: 10,    // tenths of the letter sweep speed\n  blur: 6.5, glow: 70, state: 0, dark: 0,\n}"
+  },
+  {
+   "slug": "holo-metrics",
+   "name": "Spatial metric cards",
+   "category": "Numbers & data",
+   "tags": [
+    "data",
+    "navigation"
+   ],
+   "from": "Analytics dashboard",
+   "source": "Interactive studio",
+   "description": "Six gradient glass metric cards ride one continuous position: drag or scroll and it coasts with momentum, drifts on its own, and snaps to the nearest card when drift is off. Six 3D engines read the same position — cylindrical carousel with lens stretch, liquid refraction, orbital helix, prism accordion, zero-G grid and portal vortex. Three charts scrub under the pointer.",
+   "hint": "Drag, scroll, scrub",
+   "spec": {
+    "Drag": "320 px per card · release velocity ×18",
+    "Momentum": "vel × 0.04^dt",
+    "Drift": "0.24 cards/s · pauses on hover",
+    "Snap": "rate 7 when |vel| < 0.06",
+    "Depth blur": "(|Δ| − 0.35) × 5.5 × warp px",
+    "Perspective": "1150 px"
+   },
+   "file": "HoloMetrics.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  drift: 24,     // hundredths of a card per second while auto-drifting (0.24 cards/s)\n  damping: 4,    // hundredths: velocity keeps this share per second (vel *= 0.04^dt)\n  snap: 7,       // magnetic snap rate once velocity settles (drift off)\n  follow: 12,    // how fast each card settles onto its target (mode switches, grid push)\n  mode: 0, palette: 0, warp: 72, depth: 1150, auto: 1, dark: 0,\n}"
+  },
+  {
+   "slug": "thinking-suite",
+   "name": "Agent thinking loaders",
+   "category": "Numbers & data",
+   "tags": [
+    "loading",
+    "feedback"
+   ],
+   "from": "AI agent",
+   "source": "Interactive studio",
+   "description": "Six circular telemetry loaders drawn on canvas: latitude scan, harmonic beads, telemetry pulses, equaliser, orbital aperture and quantum lattice. Tap one to lift it into the hero with a pulse ring; status changes the tempo of all six.",
+   "hint": "Tap a loader",
+   "spec": {
+    "Tempo": "Thinking 1× · Synthesizing 1.7× · Idle 0.3×",
+    "Pulse": "scale .6 → 1.6 · 700 ms ENT",
+    "Render": "2D canvas · 60 fps",
+    "Variants": "6"
+   },
+   "file": "ThinkingSuite.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  burst: 700,   // ms the pulse ring takes to expand and fade\n  speed: 10,    // tenths of the base tempo\n  status: 0, aperture: 100, contrast: 88, accent: 0, dark: 0,\n}"
+  },
+  {
+   "slug": "light-dimmer",
+   "name": "Room light dimmer",
+   "category": "Controls",
+   "tags": [
+    "forms"
+   ],
+   "from": "Smart home app",
+   "source": "Concept",
+   "description": "A tall pill slider dims the room photo: fill follows the finger 1:1, the room darkens and warms, and overshoot springs back.",
+   "hint": "Drag the pill",
+   "spec": {
+    "Fill": "1:1 with pointer, elastic past ends",
+    "Room": "brightness .35 → 1.1 + warm glow",
+    "Release": "spring k500 · c30 back into range"
+   },
+   "file": "LightDimmer.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [
+    "/img/gal/gal-13.webp"
+   ],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  intro: [0.16, 1, 0.3, 1], // demo's opening move 35% → 80%\n  introMs: 1100,\n  back: { type: 'spring', stiffness: 500, damping: 30, mass: 1 }, // overdrag spring-back\n}"
+  },
+  {
+   "slug": "model-picker",
+   "name": "Model picker swipe",
+   "category": "Media & scenes",
+   "tags": [
+    "media",
+    "checkout"
+   ],
+   "from": "Product configurator",
+   "source": "Concept",
+   "description": "Swipe between models: the outgoing photo leaves, the new one slides in behind it, the name and each spec roll on their own beat.",
+   "hint": "Drag the photo",
+   "spec": {
+    "Photo": "x ±260 px · 800 ms ENT",
+    "Name / specs": "roll · 550 ms ENT · 40–50 ms apart",
+    "Swipe": "> 40 px or > 300 px/s",
+    "Dots": "active pill 8 → 22 px"
+   },
+   "file": "ModelPicker.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [
+    "/img/ex/car-a.webp",
+    "/img/ex/roadster.webp"
+   ],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  ease: [0.16, 1, 0.3, 1],\n  photoMs: 800, // photo slide (parallax: the new one travels less than the old one)\n  fadeMs: 350, // photo cross-fade\n  rollMs: 550, // name + spec rolls\n  specStagger: 50, // ms between spec figures\n}"
+  },
+  {
+   "slug": "cafe-order",
+   "name": "Café order",
+   "category": "Controls",
+   "tags": [
+    "checkout",
+    "feedback",
+    "data"
+   ],
+   "from": "Ordering app",
+   "source": "Concept",
+   "description": "One ordering card where every change moves on its own beat: the ring slides to the drink you pick, the quantity rolls and the total trails it digit by digit, and Add to cart sends the photo arcing into the cart before the badge pops.",
+   "hint": "Pick, +, add",
+   "spec": {
+    "Pick": "ring layoutId · spring k420 · c32",
+    "Digits": "spring k400 · c30 · 40 ms apart, R → L",
+    "Total vs qty": "+120 ms",
+    "Fly to cart": "650 ms · arc 28 px · scale 1 → .25",
+    "Badge": "pop 1.35 → 1 · k520 c18",
+    "Press": "scale .95 · k600 c30"
+   },
+   "file": "CafeOrder.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [
+    "/img/ex/coffee-iced-latte.webp",
+    "/img/ex/coffee-matcha.webp"
+   ],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  select: { type: 'spring', stiffness: 420, damping: 32, mass: 1 }, // ring slides to the picked drink\n  digit: { type: 'spring', stiffness: 400, damping: 30, mass: 1 }, // quantity + total roll\n  press: { type: 'spring', stiffness: 600, damping: 30, mass: 1 }, // keys and button\n  stagger: 40, // ms between digits, right → left\n  lead: 120, // ms the total waits after the quantity\n  fly: 650, // ms the photo takes to arc into the cart\n  arc: 28, // px the flight rises above the straight line\n}"
+  },
+  {
+   "slug": "swipe-cards",
+   "name": "Swipe to add",
+   "category": "Media & scenes",
+   "tags": [
+    "feedback",
+    "media"
+   ],
+   "from": "Social app",
+   "source": "Concept",
+   "description": "A deck of profile cards: the front one follows the finger and tilts from a pivot below it, “add” or “nah” blooms in with the drag, and past the threshold it is thrown off along its own arc while the next card rises on a soft spring. The buttons read the same drag.",
+   "hint": "Drag a card",
+   "spec": {
+    "Tilt": "1° per 11 px · pivot 160% down",
+    "Throw": "> 90 px or > 600 px/s · 700 ms arc",
+    "Snap back": "spring k500 · c30 · keeps release velocity",
+    "Next card": "spring k260 · c22",
+    "Stamp": "opacity · scale .7 → 1 · blur 6 → 0 px"
+   },
+   "file": "SwipeCards.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [
+    "/img/gal/gal-01.webp",
+    "/img/gal/gal-03.webp",
+    "/img/gal/gal-05.webp",
+    "/img/gal/gal-07.webp"
+   ],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  rise: { type: 'spring', stiffness: 260, damping: 22, mass: 1 }, // next card steps forward\n  release: { type: 'spring', stiffness: 500, damping: 30, mass: 1 }, // let go short of the threshold\n  tilt: 11, // px of drag per degree of tilt\n  threshold: 90, // px past which a release throws the card\n  flick: 600, // px/s that throws it regardless of distance\n  throw: 700, // ms the thrown card takes to leave\n}"
+  },
+  {
+   "slug": "circle-cursor",
+   "name": "Circle cursor",
+   "category": "Cursor & hover",
+   "tags": [
+    "hover"
+   ],
+   "from": "Site-wide cursor · marketing site",
+   "source": "Marketing site",
+   "description": "One white shape, three states: a 16 px dot, a 96 px lens over links (difference blend), and a labelled pill over work cards. It morphs while it trails the pointer.",
+   "hint": "Move here",
+   "spec": {
+    "Dot": "16 px",
+    "Link": "96 px circle · difference",
+    "Card": "pill · 12 / 18 px padding · label",
+    "Follow": "spring k500 · c40 · m0.6",
+    "Morph": "spring k400 · c32"
+   },
+   "file": "CircleCursor.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [
+    "/img/gal/gal-05.webp"
+   ],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  follow: { type: 'spring', stiffness: 500, damping: 40, mass: 0.6 }, // trail behind the pointer\n  morph: { type: 'spring', stiffness: 400, damping: 32, mass: 1 }, // dot ↔ circle ↔ pill\n  labelMs: 200, // \"View project\" fade/scale\n}"
+  },
+  {
+   "slug": "buy-morph",
+   "name": "Buy → confirm morph",
+   "category": "Controls",
+   "tags": [
+    "checkout",
+    "loading",
+    "feedback"
+   ],
+   "from": "Product page · online store",
+   "source": "E-commerce",
+   "description": "The button becomes its own progress indicator: it folds into a circle, spins, lands a check with one beat, then opens back into the label. It wears the glow CTA: hover and a light runs round the rim with a soft halo, and it keeps running while the button works. Click the demo.",
+   "hint": "Click it",
+   "spec": {
+    "Label out": "120 ms · OPA",
+    "Morph": "width → circle · 500 ms ENT",
+    "Spinner": "arc .25 → .8 · 600 ms",
+    "Check": "draw 300 ms ENT · beat 1.05× · ink → green 200 ms",
+    "Return": "hold 650 ms · expand 500 ms · label rises 16 px",
+    "Glow": "conic rim 1.5 px + 9 px halo · 2.2 s lap",
+    "Magnet": "spring k260 · c18 · m0.6 · 30%"
+   },
+   "file": "BuyMorph.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  morph: [0.16, 1, 0.3, 1], // width ↔ circle\n  morphMs: 500,\n  spinMs: 600,\n  checkMs: 300,\n  labelOutMs: 120,\n  glowSpin: 2200, // ms per lap of the rim light\n  magnet: { type: 'spring', stiffness: 260, damping: 18, mass: 0.6 }, // pull toward the pointer (30% of the offset)\n}"
+  },
+  {
+   "slug": "product-hotspots",
+   "name": "Hotspot tooltips",
+   "category": "Media & scenes",
+   "tags": [
+    "media",
+    "storytelling"
+   ],
+   "from": "Product page",
+   "source": "Concept",
+   "description": "Hotspots breathe on the product. Tap one: its tooltip springs out from the dot and the others step back.",
+   "hint": "Tap a dot",
+   "spec": {
+    "Pulse": "scale 1 → 1.9 · 1.6 s loop · 300 ms offset",
+    "Tooltip": "spring k420 · c30 · scale .6 → 1",
+    "Others": "opacity → .35"
+   },
+   "file": "ProductHotspots.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [
+    "/img/ex/roadster.webp"
+   ],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  pop: { type: 'spring', stiffness: 420, damping: 30, mass: 1 }, // tooltip out of the dot + dot scale\n  text: [0.16, 1, 0.3, 1], // tooltip lines rise\n  textMs: 350,\n  breathe: 1600, // ms per idle pulse\n  camera: { type: 'spring', stiffness: 170, damping: 26, mass: 1 }, // push-in / pull-out on the photo: soft, no overshoot\n  zoom: 1.9, // how far the camera pushes in on a detail\n}"
+  },
+  {
+   "slug": "callouts",
+   "name": "Feature callouts",
+   "category": "Media & scenes",
+   "tags": [
+    "storytelling"
+   ],
+   "from": "Feature section · online store",
+   "source": "E-commerce",
+   "description": "Callouts arrive one at a time on the product photo: the dot springs onto the part, the line draws out, the label rises. Hover one to focus it.",
+   "hint": "Hover a callout",
+   "spec": {
+    "Dot": "scale 0 → 1 · spring k400 · c30",
+    "Line": "scaleX 0 → 1 · 450 ms ENT, +150 ms",
+    "Label": "rise 12 px · +450 ms",
+    "Between callouts": "600 ms"
+   },
+   "file": "Callouts.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [
+    "/img/ex/pocket-turntable.webp"
+   ],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  dot: { type: 'spring', stiffness: 400, damping: 30, mass: 1 }, // dot springs in\n  line: [0.16, 1, 0.3, 1], // line draws out + label rises\n  lineMs: 450,\n  labelMs: 350,\n  gap: 600, // ms between callouts\n}"
+  },
+  {
+   "slug": "hold-redeem",
+   "name": "Hold to redeem",
+   "category": "Controls",
+   "tags": [
+    "feedback",
+    "checkout"
+   ],
+   "from": "Rewards app",
+   "source": "Concept",
+   "description": "Redeeming is deliberate, so it is a hold: the fill grows while pressed, drains if you let go early, and on completion the voucher turns over to the code.",
+   "hint": "Press and hold",
+   "spec": {
+    "Hold": "1.2 s",
+    "Early release": "drain 350 ms ENT",
+    "Flip": "rotateY 180° · spring k160 · c20",
+    "Tick": "spring k400 · c18, +250 ms"
+   },
+   "file": "HoldRedeem.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  hold: 1200, // ms of pressing to redeem (linear on purpose: it is a progress bar)\n  drain: [0.16, 1, 0.3, 1], // fill drains back if released early\n  drainMs: 350,\n  flip: { type: 'spring', stiffness: 160, damping: 20, mass: 1 }, // voucher turns over\n  check: { type: 'spring', stiffness: 400, damping: 18, mass: 1 }, // tick pops on the back\n}"
+  },
+  {
+   "slug": "digit-roll",
+   "name": "Rolling price",
+   "category": "Numbers & data",
+   "tags": [
+    "checkout",
+    "data"
+   ],
+   "from": "Product page · online store",
+   "source": "E-commerce",
+   "description": "Every digit rolls on its own column with a spring, left to right, and the total trails the quantity. Only digits that change move. Tap + and – to try it.",
+   "hint": "Tap + / –",
+   "spec": {
+    "Digit": "spring k400 · c30 · m1 (~4% overshoot)",
+    "Stagger": "50 ms per digit, L → R",
+    "Total vs qty": "+80 ms",
+    "Column mask": "edge fade 22%",
+    "Installments": "140 ms dip, no roll",
+    "Keys": "flat · press scale .97 · k600 c30"
+   },
+   "file": "DigitRoll.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [
+    "/img/ex/headphones.webp"
+   ],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  digit: { type: 'spring', stiffness: 400, damping: 30, mass: 1 }, // ~4% overshoot\n  stagger: 50, // ms between digits, left → right\n  lead: 80, // ms the total waits after the quantity\n  press: { type: 'spring', stiffness: 600, damping: 30, mass: 1 }, // keycap sink\n}"
+  },
+  {
+   "slug": "scroll-text-reveal",
+   "name": "Scroll text reveal",
+   "category": "Text",
+   "tags": [
+    "storytelling"
+   ],
+   "from": "Portfolio intro · marketing site",
+   "source": "Marketing site",
+   "description": "Every character brightens from grey to white as the paragraph travels up the viewport, so reading speed follows scroll speed. Scroll inside the card.",
+   "hint": "Scroll inside",
+   "spec": {
+    "Colour": "#666 → #fff per character",
+    "Scroll range": "start 0.75 → start 0.15",
+    "Split": "words share progress evenly, letters split their word",
+    "Source": "Text_Opacity_Letters.tsx"
+   },
+   "file": "ScrollTextReveal.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  scroll: [0.65, 0, 0.35, 1], // auto-scroll curve\n  scrollMs: 2400,\n  startDelay: 300,\n}"
+  },
+  {
+   "slug": "reel-card",
+   "name": "Reel card → player",
+   "category": "Sheets & navigation",
+   "tags": [
+    "media"
+   ],
+   "from": "Homepage hero · marketing site",
+   "source": "Marketing site",
+   "description": "The play pill leans toward the cursor on a light spring. Click and the card itself grows into the player, so the viewer never loses the thing they clicked. Hover and click the demo.",
+   "hint": "Hover, then click",
+   "spec": {
+    "Pill follow": "spring k420 · c34 · m0.6 · 35% of offset",
+    "Hover": "pill 1.06× · preview 1.03× over 900 ms ENT",
+    "Expand": "750 ms · ENT (.16, 1, .3, 1)",
+    "Scrim": "94% black · 500 ms",
+    "Close button": ".8 → 1 · 400 ms, +200 ms"
+   },
+   "file": "ReelCard.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [
+    "/media/reel-gallery-poster.jpg",
+    "/media/reel-gallery.mp4"
+   ],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  grow: [0.16, 1, 0.3, 1], // card → player and back\n  growMs: 750,\n  scrimMs: 500,\n  closeDelay: 200, // close button arrives last\n  pill: { type: 'spring', stiffness: 420, damping: 34, mass: 0.6 }, // play pill follows the cursor\n}"
+  },
+  {
+   "slug": "day-night",
+   "name": "Night → day",
+   "category": "Media & scenes",
+   "tags": [
+    "forms"
+   ],
+   "from": "Dashboard",
+   "source": "Dashboard",
+   "description": "The whole surface changes theme in one curve: background, ink and icon move together. Click the demo to switch between day and night.",
+   "hint": "Tap the card",
+   "spec": {
+    "Duration": "900 ms",
+    "Easing": "TWO (.65, 0, .35, 1)",
+    "Icon": "rotate ±40° · scale .6 → 1"
+   },
+   "file": "DayNight.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  fade: [0.65, 0, 0.35, 1], // the whole surface, one curve\n  fadeMs: 900,\n}"
+  },
+  {
+   "slug": "image-cursor",
+   "name": "Image cursor",
+   "category": "Cursor & hover",
+   "tags": [
+    "hover",
+    "navigation"
+   ],
+   "from": "Project list · marketing site",
+   "source": "Marketing site",
+   "description": "A portrait rides the pointer over the list and flips through the project photos, lagging on a spring so it feels carried rather than glued.",
+   "hint": "Hover the list",
+   "spec": {
+    "Frame": "160 × 230 · radius 5 (shown at 70%)",
+    "Photos": "5 variants, 520 ms each",
+    "Follow": "spring k220 · c26 · m0.8",
+    "In / out": "scale 0 ↔ 1 from the pointer"
+   },
+   "file": "ImageCursor.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [
+    "/img/gal/gal-01.webp",
+    "/img/gal/gal-02.webp",
+    "/img/gal/gal-03.webp",
+    "/img/gal/gal-04.webp",
+    "/img/gal/gal-05.webp",
+    "/img/gal/gal-06.webp",
+    "/img/gal/gal-07.webp",
+    "/img/gal/gal-08.webp",
+    "/img/gal/gal-09.webp",
+    "/img/gal/gal-10.webp",
+    "/img/gal/gal-11.webp",
+    "/img/gal/gal-12.webp",
+    "/img/gal/gal-13.webp"
+   ],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  follow: { type: 'spring', stiffness: 220, damping: 26, mass: 0.8 }, // lag behind the pointer\n  pop: { type: 'spring', stiffness: 300, damping: 26, mass: 1 }, // scale in / out from the pointer\n  cycle: 520, // ms per photo\n}"
+  },
+  {
+   "slug": "work-card-hover",
+   "name": "Work card hover",
+   "category": "Cursor & hover",
+   "tags": [
+    "hover",
+    "media"
+   ],
+   "from": "Project grid · marketing site",
+   "source": "Marketing site",
+   "description": "The image eases in, a hairline and a marquee banner cross the middle, and the title rolls to its twin. Hover or tap the card.",
+   "hint": "Hover or tap",
+   "spec": {
+    "Image": "scale 1 → 1.06 · 900 ms ENT",
+    "Line": "1 px white · scaleX from left",
+    "Banner": "marquee · gap 300 px",
+    "Title": "Text1 ↑ / Text2 ↑ · 600 ms ENT"
+   },
+   "file": "WorkCardHover.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [
+    "/img/gal/gal-12.webp"
+   ],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  ease: [0.16, 1, 0.3, 1], // line, title roll and image zoom\n  rollMs: 600, // title roll + line draw\n  zoomMs: 900, // image scale 1 → 1.06\n  bannerMs: 300, // marquee fade\n  marqueeMs: 6000, // one loop of the banner\n}"
+  },
+  {
+   "slug": "capabilities-accordion",
+   "name": "Capabilities accordion",
+   "category": "Sheets & navigation",
+   "tags": [
+    "navigation",
+    "storytelling"
+   ],
+   "from": "Services list · marketing site",
+   "source": "Marketing site",
+   "description": "Rows unfold to their own height while the plus turns into a minus. One open at a time, hairline rules in Light Grey 20%.",
+   "hint": "Tap a row",
+   "spec": {
+    "Height": "0 → auto · 500 ms ENT",
+    "Icon": "rotate 90° + bar collapse · 400 ms",
+    "Rule": "1 px · rgba(187,187,187,.2)",
+    "Copy": "example services copy"
+   },
+   "file": "FaqAccordion.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  ease: [0.16, 1, 0.3, 1],\n  unfoldMs: 500, // answer height + fade\n  iconMs: 400, // plus → minus\n}"
+  },
+  {
+   "slug": "nav-letter-roll",
+   "name": "Nav letter roll",
+   "category": "Text",
+   "tags": [
+    "navigation",
+    "hover"
+   ],
+   "from": "Menu · marketing site",
+   "source": "Marketing site",
+   "description": "Links are split into letters; on hover each letter rolls up to a blue twin, 25 ms apart, so the word ripples left to right.",
+   "hint": "Hover a link",
+   "spec": {
+    "Roll": "y 0 → −110% · 500 ms ENT",
+    "Stagger": "25 ms per letter",
+    "Twin": "/Blue rgb(0, 153, 255)"
+   },
+   "file": "NavLetterRoll.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  ease: [0.16, 1, 0.3, 1],\n  rollMs: 500, // each letter's roll\n  stagger: 25, // ms between letters\n}"
+  }
+ ]
+}

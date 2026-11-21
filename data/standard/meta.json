@@ -1,0 +1,4 @@
+{
+ "version": "1.0",
+ "when": "adding or changing any UI animation, transition, hover or press state, gesture response, loading or success state, page or route transition, or when the user asks to make an interface feel smoother, more tactile, calmer, more alive or more polished, or asks to review or fix motion"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "phation",
+  "version": "0.1.0",
+  "description": "Phation: production-ready interactions for React + Motion, as an MCP server and a CLI.",
+  "type": "module",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "https://phation.app",
+  "bin": {
+    "phation-mcp": "bin/server.mjs",
+    "phation": "bin/cli.mjs"
+  },
+  "files": [
+    "bin",
+    "lib.mjs",
+    "share.mjs",
+    "audit.mjs",
+    "data/entries.json",
+    "data/standard",
+    "animate",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@babel/parser": "7.29.13",
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "puppeteer-core": "23.11.1",
+    "zod": "4.6.7"
+  },
+  "keywords": [
+    "motion",
+    "animation",
+    "react",
+    "framer-motion",
+    "mcp",
+    "claude",
+    "cursor",
+    "ui",
+    "spring"
+  ]
+}
