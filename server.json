@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pnhathuy09/phation",
+  "title": "Phation",
+  "description": "Motion rules and ready-made React + Motion interactions so your agent's animations feel right.",
+  "repository": {
+    "url": "https://github.com/pnhathuy09/phation",
+    "source": "github"
+  },
+  "websiteUrl": "https://phation.app",
+  "version": "0.1.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "phation",
+      "version": "0.1.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "environmentVariables": [
+        {
+          "name": "PHATION_KEY",
+          "description": "Phation Pro license key (optional; enables add_motion, audit_motion and animate_ui)",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
