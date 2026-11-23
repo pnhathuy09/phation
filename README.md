@@ -7,6 +7,8 @@
 Ready-made interactions and motion rules for your coding agent, so the motion it writes is right the first time, not the fifth.</p>
 <p align="center"><a href="https://phation.app">phation.app</a> · <a href="https://www.npmjs.com/package/phation">npm</a> · <a href="#mcp-tools">MCP tools</a> · <a href="#the-phation-standard">Standard</a></p>
 
+<p align="center"><a href="https://glama.ai/mcp/servers/pnhathuy09/phation"><img src="https://glama.ai/mcp/servers/pnhathuy09/phation/badges/score.svg" alt="pnhathuy09/phation MCP server"></a></p>
+
 ---
 
 Ask an agent to "animate the add-to-cart flow" and you usually get hard cuts, linear easing, numbers that swap instead of roll, and nothing for reduced motion. Phation gives the agent two things:
