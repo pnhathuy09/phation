@@ -7,7 +7,7 @@ import { z } from 'zod'
 import { ENTRIES, CATEGORIES, search, get, summary, suggest, add, STANDARD, CORE, STANDARD_VERSION, standardSection, install, TOOLS, getCode, motionBlock, requirePro } from '../lib.mjs'
 
 const server = new McpServer(
-  { name: 'phation', version: '0.1.0' },
+  { name: 'phation', version: '0.1.1' },
   {
     instructions:
       'Phation: tested React + Motion interactions, a motion standard and a frame-by-frame audit. Work token-lean. ' +
