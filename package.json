@@ -1,10 +1,10 @@
 {
   "name": "phation",
   "mcpName": "io.github.pnhathuy09/phation",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Phation: production-ready interactions for React + Motion, as an MCP server and a CLI.",
   "type": "module",
-  "license": "SEE LICENSE IN LICENSE.md",
+  "license": "MIT",
   "homepage": "https://phation.app",
   "repository": {
     "type": "git",
@@ -24,7 +24,8 @@
     "audit.mjs",
     "data/entries.json",
     "data/standard",
-    "LICENSE.md",
+    "LICENSE",
+    "NOTICE.md",
     "README.md",
     "animate/*.mjs",
     "animate/core",

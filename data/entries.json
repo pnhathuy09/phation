@@ -34,7 +34,8 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  swell: { type: 'spring', stiffness: 160, damping: 18, mass: 1 }, // grow on hold, settle on release\n  speed: 10,  // tenths of the base spin (1.0×)\n  boost: 3,   // spin multiplier while listening\n  size: 118,  // % the ring grows to while held\n  blur: 18, palette: 0,\n}"
+   "motion": "export const MOTION = {\n  swell: { type: 'spring', stiffness: 160, damping: 18, mass: 1 }, // grow on hold, settle on release\n  speed: 10,  // tenths of the base spin (1.0×)\n  boost: 3,   // spin multiplier while listening\n  size: 118,  // % the ring grows to while held\n  blur: 18, palette: 0,\n}",
+   "free": false
   },
   {
    "slug": "rotary-deck",
@@ -61,7 +62,8 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  fanBack: { type: 'spring', stiffness: 120, damping: 16, mass: 1 }, // the extra fan from a fast drag settling back\n  coast: 900, // ms of spin momentum after release\n  fan: 250, spacing: 36, persp: 1200, spin: 22, auto: 1,\n}"
+   "motion": "export const MOTION = {\n  fanBack: { type: 'spring', stiffness: 120, damping: 16, mass: 1 }, // the extra fan from a fast drag settling back\n  coast: 900, // ms of spin momentum after release\n  fan: 250, spacing: 36, persp: 1200, spin: 22, auto: 1,\n}",
+   "free": false
   },
   {
    "slug": "ai-aura-input",
@@ -89,7 +91,8 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  magnet: { type: 'spring', stiffness: 40, damping: 11, mass: 1 }, // how the bright side swings to the pointer\n  think: 1500,  // ms the aura orbits before the answer\n  rise: { type: 'spring', stiffness: 170, damping: 24, mass: 1 }, // answer card in (ζ ≈ 0.92: settles, no visible bounce)\n  decode: 14,   // ms between letters as the reply decodes\n  orbit: 14,    // tenths of a turn per second while thinking (1.4 turns/s)\n  theme: 0, bezel: 8, glow: 60, follow: 1,\n}"
+   "motion": "export const MOTION = {\n  magnet: { type: 'spring', stiffness: 40, damping: 11, mass: 1 }, // how the bright side swings to the pointer\n  think: 1500,  // ms the aura orbits before the answer\n  rise: { type: 'spring', stiffness: 170, damping: 24, mass: 1 }, // answer card in (ζ ≈ 0.92: settles, no visible bounce)\n  decode: 14,   // ms between letters as the reply decodes\n  orbit: 14,    // tenths of a turn per second while thinking (1.4 turns/s)\n  theme: 0, bezel: 8, glow: 60, follow: 1,\n}",
+   "free": false
   },
   {
    "slug": "glass-grid",
@@ -116,7 +119,8 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  follow: { type: 'spring', stiffness: 60, damping: 14, mass: 1 },  // lights drifting toward the pointer\n  paint: { type: 'spring', stiffness: 170, damping: 22, mass: 1 },  // lights under a dragging finger\n  ripple: 560, // ms one tile takes to dip and return\n  wave: 46,    // ms per tile of distance from the press\n  depth: 9,    // % the pressed tile sinks (scale 1 → .91)\n  palette: 0, diffusion: 60, frost: 55, gap: 3, drift: 1,\n}"
+   "motion": "export const MOTION = {\n  follow: { type: 'spring', stiffness: 60, damping: 14, mass: 1 },  // lights drifting toward the pointer\n  paint: { type: 'spring', stiffness: 170, damping: 22, mass: 1 },  // lights under a dragging finger\n  ripple: 560, // ms one tile takes to dip and return\n  wave: 46,    // ms per tile of distance from the press\n  depth: 9,    // % the pressed tile sinks (scale 1 → .91)\n  palette: 0, diffusion: 60, frost: 55, gap: 3, drift: 1,\n}",
+   "free": false
   },
   {
    "slug": "acrylic-arc",
@@ -157,7 +161,8 @@
     "/img/gal/gal-13.webp"
    ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  focus: { type: 'spring', stiffness: 170, damping: 26, mass: 1 }, // turning to a tapped card / settling\n  lift: { type: 'spring', stiffness: 300, damping: 26, mass: 1 },  // centre card lifting out\n  coast: 420, // ms of drag momentum before it settles\n  mode: 0, curve: 42, spread: 104, pitch: 6, dof: 4, rim: 70, sweep: 0,\n}"
+   "motion": "export const MOTION = {\n  focus: { type: 'spring', stiffness: 170, damping: 26, mass: 1 }, // turning to a tapped card / settling\n  lift: { type: 'spring', stiffness: 300, damping: 26, mass: 1 },  // centre card lifting out\n  coast: 420, // ms of drag momentum before it settles\n  mode: 0, curve: 42, spread: 104, pitch: 6, dof: 4, rim: 70, sweep: 0,\n}",
+   "free": false
   },
   {
    "slug": "glyph-matrix",
@@ -186,7 +191,67 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  shock: 900,   // ms one shockwave takes to cross the field\n  density: 9,   // px per cell\n  wave: 50, force: 60, glow: 40, grain: 25,\n  subject: 0, set: 0, palette: 0, split: 0, invert: 0, contrast: 60, dark: 0,\n}"
+   "motion": "export const MOTION = {\n  shock: 900,   // ms one shockwave takes to cross the field\n  density: 9,   // px per cell\n  wave: 50, force: 60, glow: 40, grain: 25,\n  subject: 0, set: 0, palette: 0, split: 0, invert: 0, contrast: 60, dark: 0,\n}",
+   "free": false
+  },
+  {
+   "slug": "point-cloud-morph",
+   "name": "Point cloud morph",
+   "category": "Media & scenes",
+   "tags": [
+    "storytelling",
+    "media",
+    "hover"
+   ],
+   "from": "Generative hero",
+   "source": "Interactive studio",
+   "description": "A 3D cloud of 2,200 points and glowing nodes holds one form at a time: a # of small cubes, a swallowtail butterfly, a faceted bolt, a crystal cluster or your own image. Points draw as crisp binary glyphs or micro dots. Drag to turn it any way and it coasts into a slow drift. Tap and it flows top to bottom into the next form; double-tap disperses it in a wave that settles back.",
+   "hint": "Drag, tap, double-tap",
+   "spec": {
+    "Points": "2,200 + up to 40 nodes · default Butterfly · micro dots · Mono",
+    "Morph": "per-point spring ω 5.5 · ζ 1 · sweep 800 ms top → bottom",
+    "Turn": "360° both axes · momentum vel × 0.04^dt → drift",
+    "Depth": "perspective 560 · far side blurred",
+    "Scatter": "wave 380 px/s · impulse 150–300"
+   },
+   "file": "PointCloudMorph.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  settle: 5.5,   // ω, rad/s — each point's spring toward its form\n  stagger: 800,  // ms — the morph sweeps from top to bottom\n  drift: 30,     // % idle auto-turn\n  force: 50,     // % pointer push\n  depthBlur: 20, // % blur on the far side only\n  size: 50,      // % glyph / dot size\n  shape: 1, render: 1, palette: 0, // default look: Butterfly · Micro dots · Mono\n}",
+   "free": false
+  },
+  {
+   "slug": "crosshair-butterfly",
+   "name": "Crosshair butterfly",
+   "category": "Media & scenes",
+   "tags": [
+    "storytelling",
+    "hover"
+   ],
+   "from": "Generative hero",
+   "source": "Interactive studio",
+   "description": "A butterfly drawn on a lattice: crosshairs trace the veins and margins, micro dots fill the wings and faint pixel cells hold the grid. Amber and gold at the body cool to slate-blue and silver at the tips, with dust drifting below. The pointer pushes the marks aside and they settle home; a click sends a ripple through the wings.",
+   "hint": "Move, click",
+   "spec": {
+    "Wings": "fold up to 28° · cosine at 1.4 rad/s · tilt 18°",
+    "Return": "critically damped · ω 8 rad/s",
+    "Repulsion": "58 px radius · (1 − d/R)²",
+    "Ripple": "1300 ms · 320 px/s front · hairline ring",
+    "Grid": "6 px · default Pixel grid · Silver Ink"
+   },
+   "file": "CrosshairButterfly.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  flap: 45,      // % — wing fold (100 = 40°)\n  pace: 1.4,     // rad/s — wingbeat (slow and even)\n  settle: 8,     // ω, rad/s — spring that brings each mark home (ζ = 1, no bounce)\n  force: 60,     // % pointer repulsion\n  shock: 1300,   // ms a click ripple lives\n  density: 6,    // px lattice step\n  motes: 70,     // dust particles below\n  set: 3, palette: 3, // default look: Pixel grid · Silver Ink\n}",
+   "free": false
   },
   {
    "slug": "globe-telemetry",
@@ -215,7 +280,8 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  focus: { type: 'spring', stiffness: 60, damping: 14, mass: 1 }, // camera swing to a focus region\n  coast: 420,  // ms of drag momentum (vel × 0.04^dt, scaled)\n  spin: 35, density: 3200, bloom: 60, drift: 1, mode: 0, region: 0, dark: 0,\n}"
+   "motion": "export const MOTION = {\n  focus: { type: 'spring', stiffness: 60, damping: 14, mass: 1 }, // camera swing to a focus region\n  coast: 420,  // ms of drag momentum (vel × 0.04^dt, scaled)\n  spin: 35, density: 3200, bloom: 60, drift: 1, mode: 0, region: 0, dark: 0,\n}",
+   "free": false
   },
   {
    "slug": "gooey-voice",
@@ -244,7 +310,8 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  capsule: { type: 'spring', stiffness: 260, damping: 22, mass: 1 }, // main pill 64 → 168 px\n  droplet: { type: 'spring', stiffness: 170, damping: 15, mass: 1 }, // cancel droplet eject / retract (lags → bridge)\n  eject: 104,   // px the cancel droplet travels right — close enough that a liquid neck stays at rest\n  goo: 11,      // feGaussianBlur stdDeviation\n  bars: 5, tone: 0, dark: 0, wave: 0,\n}"
+   "motion": "export const MOTION = {\n  capsule: { type: 'spring', stiffness: 260, damping: 22, mass: 1 }, // main pill 64 → 168 px\n  droplet: { type: 'spring', stiffness: 170, damping: 15, mass: 1 }, // cancel droplet eject / retract (lags → bridge)\n  eject: 104,   // px the cancel droplet travels right — close enough that a liquid neck stays at rest\n  goo: 11,      // feGaussianBlur stdDeviation\n  bars: 5, tone: 0, dark: 0, wave: 0,\n}",
+   "free": false
   },
   {
    "slug": "swiss-stack",
@@ -256,7 +323,7 @@
    ],
    "from": "Editorial collection",
    "source": "Interactive studio",
-   "description": "Six editorial cards in one cascading stack. Drag it 1:1: the rear cards spread like an accordion and the front card tilts with the pull. Flick and the release is projected to the nearest card; the front card dips on an arc and tucks behind the deck.",
+   "description": "Six photo collection cards in one cascading stack. Drag it 1:1: the rear cards spread like an accordion and the front card tilts with the pull. Flick and the release is projected to the nearest card; the front card dips on an arc and tucks behind the deck.",
    "hint": "Drag, scroll, flick",
    "spec": {
     "Snap": "spring k110 · c19.5 · ×tension, c×√tension",
@@ -264,16 +331,32 @@
     "Flick": "index + velocity × 0.14 → round",
     "Cascade": "24 px · taper 0.085 · min scale 0.64",
     "Wrap": "smoothstep + sin arc 98 px · z flips at 0.48",
-    "Depth blur": "(d − 0.35) × 0.55 px"
+    "Depth blur": "(d − 0.35) × 0.55 px",
+    "Card": "Soft white r22 · photo inset 8 · r14 · title Inter 15/600"
    },
    "file": "SwissStack.jsx",
    "dependencies": [
     "react",
     "motion/react"
    ],
-   "assets": [],
+   "assets": [
+    "/img/gal/gal-01.webp",
+    "/img/gal/gal-02.webp",
+    "/img/gal/gal-03.webp",
+    "/img/gal/gal-04.webp",
+    "/img/gal/gal-05.webp",
+    "/img/gal/gal-06.webp",
+    "/img/gal/gal-07.webp",
+    "/img/gal/gal-08.webp",
+    "/img/gal/gal-09.webp",
+    "/img/gal/gal-10.webp",
+    "/img/gal/gal-11.webp",
+    "/img/gal/gal-12.webp",
+    "/img/gal/gal-13.webp"
+   ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  snap: { type: 'spring', stiffness: 110, damping: 19.5, mass: 1 }, // release snap (×tension, damping ×√tension)\n  dwell: 2600,  // ms the deck rests before Auto cycle deals the next card\n  spread: 24,   // px between stacked card tops\n  taper: 0.085, // scale lost per card of depth\n  tension: 1,   // spring tension multiplier\n  auto: 1,\n}"
+   "motion": "export const MOTION = {\n  snap: { type: 'spring', stiffness: 110, damping: 19.5, mass: 1 }, // release snap (×tension, damping ×√tension)\n  dwell: 2600,  // ms the deck rests before Auto cycle deals the next card\n  spread: 24,   // px between stacked card tops\n  taper: 0.085, // scale lost per card of depth\n  tension: 1,   // spring tension multiplier\n  auto: 1,\n}",
+   "free": false
   },
   {
    "slug": "optical-agent",
@@ -301,7 +384,8 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  rim: { type: 'spring', stiffness: 90, damping: 16, mass: 1 },     // left rim light following the pointer's height\n  merge: { type: 'spring', stiffness: 140, damping: 14, mass: 1 },  // lens gap opening / closing between states\n  think: 2700,  // ms from send to Complete (three status words)\n  orbit: 10,    // tenths of the base orbit speed (1.0×)\n  sweep: 10,    // tenths of the letter sweep speed\n  blur: 6.5, glow: 70, state: 0, dark: 0,\n}"
+   "motion": "export const MOTION = {\n  rim: { type: 'spring', stiffness: 90, damping: 16, mass: 1 },     // left rim light following the pointer's height\n  merge: { type: 'spring', stiffness: 140, damping: 14, mass: 1 },  // lens gap opening / closing between states\n  think: 2700,  // ms from send to Complete (three status words)\n  orbit: 10,    // tenths of the base orbit speed (1.0×)\n  sweep: 10,    // tenths of the letter sweep speed\n  blur: 6.5, glow: 70, state: 0, dark: 0,\n}",
+   "free": false
   },
   {
    "slug": "holo-metrics",
@@ -330,7 +414,8 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  drift: 24,     // hundredths of a card per second while auto-drifting (0.24 cards/s)\n  damping: 4,    // hundredths: velocity keeps this share per second (vel *= 0.04^dt)\n  snap: 7,       // magnetic snap rate once velocity settles (drift off)\n  follow: 12,    // how fast each card settles onto its target (mode switches, grid push)\n  mode: 0, palette: 0, warp: 72, depth: 1150, auto: 1, dark: 0,\n}"
+   "motion": "export const MOTION = {\n  drift: 24,     // hundredths of a card per second while auto-drifting (0.24 cards/s)\n  damping: 4,    // hundredths: velocity keeps this share per second (vel *= 0.04^dt)\n  snap: 7,       // magnetic snap rate once velocity settles (drift off)\n  follow: 12,    // how fast each card settles onto its target (mode switches, grid push)\n  mode: 0, palette: 0, warp: 72, depth: 1150, auto: 1, dark: 0,\n}",
+   "free": false
   },
   {
    "slug": "thinking-suite",
@@ -357,7 +442,39 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  burst: 700,   // ms the pulse ring takes to expand and fade\n  speed: 10,    // tenths of the base tempo\n  status: 0, aperture: 100, contrast: 88, accent: 0, dark: 0,\n}"
+   "motion": "export const MOTION = {\n  burst: 700,   // ms the pulse ring takes to expand and fade\n  speed: 10,    // tenths of the base tempo\n  status: 0, aperture: 100, contrast: 88, accent: 0, dark: 0,\n}",
+   "free": false
+  },
+  {
+   "slug": "solar-horizon",
+   "name": "Solar horizon switch",
+   "category": "Controls",
+   "tags": [
+    "forms",
+    "feedback"
+   ],
+   "from": "Appearance settings",
+   "source": "Interactive studio",
+   "description": "The appearance toggle is a small sky. Click it and the sky knob swipes across while the sun sinks through the horizon and the moon rises, or back, with its elevation read out live under the label. One damped value moves the discs, the glow, the well and the surface together; it is critically damped or overdamped, so it lands without a bounce.",
+   "hint": "Click the pill",
+   "spec": {
+    "Settle": "ω 6.5 rad/s · ζ 1.15 (overdamped) · never overshoots",
+    "Sky": "shared orbit r 13 · sun 62° → below · moon below → 58°",
+    "Knob": "54 px sky · swipes left ↔ right on the same value · stretch ≤ 6% from speed",
+    "Emblem": "sun r 6.6 · moon r 6.2 · orbit r 16 · lift 1.5 px",
+    "Label": "cross-fade 5 px · live elevation, tabular numbers",
+    "Surface": "flat fill · 1 px hairline · one soft shadow",
+    "Press": "scale .98 · ω 28 · ζ 1"
+   },
+   "file": "SolarHorizon.jsx",
+   "dependencies": [
+    "react",
+    "motion/react"
+   ],
+   "assets": [],
+   "tunable": true,
+   "motion": "export const MOTION = {\n  settle: 6.5,   // ω, rad/s — how quickly the sky turns\n  damping: 1.15, // ζ — 1 = critically damped, above 1 = overdamped (slower, softer landing). Never below 1.\n  glow: 55,      // % halo around the sun / moon\n  iconScale: 100, // % — emblem scale inside the 54 px knob\n  iconLift: 1.5,  // px — emblem raised so the horizon sits on the optical centre, not on the lower edge\n}",
+   "free": false
   },
   {
    "slug": "light-dimmer",
@@ -384,7 +501,8 @@
     "/img/gal/gal-13.webp"
    ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  intro: [0.16, 1, 0.3, 1], // demo's opening move 35% → 80%\n  introMs: 1100,\n  back: { type: 'spring', stiffness: 500, damping: 30, mass: 1 }, // overdrag spring-back\n}"
+   "motion": "export const MOTION = {\n  intro: [0.16, 1, 0.3, 1], // demo's opening move 35% → 80%\n  introMs: 1100,\n  back: { type: 'spring', stiffness: 500, damping: 30, mass: 1 }, // overdrag spring-back\n}",
+   "free": false
   },
   {
    "slug": "model-picker",
@@ -414,7 +532,8 @@
     "/img/ex/roadster.webp"
    ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  ease: [0.16, 1, 0.3, 1],\n  photoMs: 800, // photo slide (parallax: the new one travels less than the old one)\n  fadeMs: 350, // photo cross-fade\n  rollMs: 550, // name + spec rolls\n  specStagger: 50, // ms between spec figures\n}"
+   "motion": "export const MOTION = {\n  ease: [0.16, 1, 0.3, 1],\n  photoMs: 800, // photo slide (parallax: the new one travels less than the old one)\n  fadeMs: 350, // photo cross-fade\n  rollMs: 550, // name + spec rolls\n  specStagger: 50, // ms between spec figures\n}",
+   "free": false
   },
   {
    "slug": "cafe-order",
@@ -447,7 +566,8 @@
     "/img/ex/coffee-matcha.webp"
    ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  select: { type: 'spring', stiffness: 420, damping: 32, mass: 1 }, // ring slides to the picked drink\n  digit: { type: 'spring', stiffness: 400, damping: 30, mass: 1 }, // quantity + total roll\n  press: { type: 'spring', stiffness: 600, damping: 30, mass: 1 }, // keys and button\n  stagger: 40, // ms between digits, right → left\n  lead: 120, // ms the total waits after the quantity\n  fly: 650, // ms the photo takes to arc into the cart\n  arc: 28, // px the flight rises above the straight line\n}"
+   "motion": "export const MOTION = {\n  select: { type: 'spring', stiffness: 420, damping: 32, mass: 1 }, // ring slides to the picked drink\n  digit: { type: 'spring', stiffness: 400, damping: 30, mass: 1 }, // quantity + total roll\n  press: { type: 'spring', stiffness: 600, damping: 30, mass: 1 }, // keys and button\n  stagger: 40, // ms between digits, right → left\n  lead: 120, // ms the total waits after the quantity\n  fly: 650, // ms the photo takes to arc into the cart\n  arc: 28, // px the flight rises above the straight line\n}",
+   "free": false
   },
   {
    "slug": "swipe-cards",
@@ -480,7 +600,8 @@
     "/img/gal/gal-07.webp"
    ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  rise: { type: 'spring', stiffness: 260, damping: 22, mass: 1 }, // next card steps forward\n  release: { type: 'spring', stiffness: 500, damping: 30, mass: 1 }, // let go short of the threshold\n  tilt: 11, // px of drag per degree of tilt\n  threshold: 90, // px past which a release throws the card\n  flick: 600, // px/s that throws it regardless of distance\n  throw: 700, // ms the thrown card takes to leave\n}"
+   "motion": "export const MOTION = {\n  rise: { type: 'spring', stiffness: 260, damping: 22, mass: 1 }, // next card steps forward\n  release: { type: 'spring', stiffness: 500, damping: 30, mass: 1 }, // let go short of the threshold\n  tilt: 11, // px of drag per degree of tilt\n  threshold: 90, // px past which a release throws the card\n  flick: 600, // px/s that throws it regardless of distance\n  throw: 700, // ms the thrown card takes to leave\n}",
+   "free": false
   },
   {
    "slug": "circle-cursor",
@@ -509,7 +630,8 @@
     "/img/gal/gal-05.webp"
    ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  follow: { type: 'spring', stiffness: 500, damping: 40, mass: 0.6 }, // trail behind the pointer\n  morph: { type: 'spring', stiffness: 400, damping: 32, mass: 1 }, // dot ↔ circle ↔ pill\n  labelMs: 200, // \"View project\" fade/scale\n}"
+   "motion": "export const MOTION = {\n  follow: { type: 'spring', stiffness: 500, damping: 40, mass: 0.6 }, // trail behind the pointer\n  morph: { type: 'spring', stiffness: 400, damping: 32, mass: 1 }, // dot ↔ circle ↔ pill\n  labelMs: 200, // \"View project\" fade/scale\n}",
+   "free": false
   },
   {
    "slug": "buy-morph",
@@ -540,7 +662,9 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  morph: [0.16, 1, 0.3, 1], // width ↔ circle\n  morphMs: 500,\n  spinMs: 600,\n  checkMs: 300,\n  labelOutMs: 120,\n  glowSpin: 2200, // ms per lap of the rim light\n  magnet: { type: 'spring', stiffness: 260, damping: 18, mass: 0.6 }, // pull toward the pointer (30% of the offset)\n}"
+   "motion": "export const MOTION = {\n  morph: [0.16, 1, 0.3, 1], // width ↔ circle\n  morphMs: 500,\n  spinMs: 600,\n  checkMs: 300,\n  labelOutMs: 120,\n  glowSpin: 2200, // ms per lap of the rim light\n  magnet: { type: 'spring', stiffness: 260, damping: 18, mass: 0.6 }, // pull toward the pointer (30% of the offset)\n}",
+   "free": true,
+   "code": "import { useEffect, useRef, useState } from 'react'\nimport { motion, AnimatePresence, useReducedMotion, useSpring } from 'motion/react'\n\n// ── Sound: tiny Web Audio cues, synthesized in code (no files). A cue only plays right after a real visitor input\n// inside this component (auto-played intros stay silent) and never under an element with data-sound=\"off\".\nconst SND = typeof window === 'undefined' ? null : (window.__cueIn ||= (() => {\n  const s = { t: -1e9, el: null, path: null, down: null, last: {} }\n  const on = ev => {\n    if (!ev.isTrusted) return\n    s.t = performance.now()\n    const held = ev.type === 'pointermove' && ev.buttons && s.down // a drag keeps belonging to where it started\n    if (ev.type === 'pointerdown') s.down = ev.composedPath()\n    s.path = held ? s.down : (ev.type === 'pointerup' && s.down) || ev.composedPath(); s.el = s.path[0]\n    if (ev.type === 'pointerup') s.down = null\n  }\n  for (const e of ['pointerdown', 'pointermove', 'pointerup', 'keydown', 'wheel', 'touchstart']) addEventListener(e, on, { capture: true, passive: true })\n  return s\n})())\nfunction cue(root, kind, { sound = 1, volume = 60, gap = 28, pitch = 1 } = {}) {\n  const S = SND, now = performance.now()\n  if (!S || !sound || !volume || !root || !(S.path?.includes(root) || root.contains?.(S.el)) || now - S.t > 3000 || root.closest?.('[data-sound=\"off\"]')) return\n  if (now - (S.last[kind] || 0) < gap) return; S.last[kind] = now\n  const ac = (S.ac ||= new (window.AudioContext || window.webkitAudioContext)()); if (ac.state === 'suspended') ac.resume()\n  const t = ac.currentTime, out = ac.createGain(); out.gain.value = (volume / 100) * 0.45; out.connect(ac.destination)\n  const tone = (f0, f1, dur, type = 'sine', g = 1, at = 0) => {\n    const o = ac.createOscillator(), v = ac.createGain(); o.type = type\n    o.frequency.setValueAtTime(f0 * pitch, t + at); o.frequency.exponentialRampToValueAtTime(f1 * pitch, t + at + dur)\n    v.gain.setValueAtTime(0.0001, t + at); v.gain.exponentialRampToValueAtTime(g, t + at + 0.005); v.gain.exponentialRampToValueAtTime(0.0001, t + at + dur)\n    o.connect(v).connect(out); o.start(t + at); o.stop(t + at + dur + 0.03)\n  }\n  const air = (dur, f0, f1, g = 1) => { // filtered noise sweep\n    const b = ac.createBuffer(1, Math.ceil(ac.sampleRate * dur), ac.sampleRate), d = b.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1\n    const src = ac.createBufferSource(), bp = ac.createBiquadFilter(), v = ac.createGain(); src.buffer = b; bp.type = 'bandpass'; bp.Q.value = 1.4\n    bp.frequency.setValueAtTime(f0, t); bp.frequency.exponentialRampToValueAtTime(f1, t + dur)\n    v.gain.setValueAtTime(0.0001, t); v.gain.linearRampToValueAtTime(g, t + dur * 0.35); v.gain.exponentialRampToValueAtTime(0.0001, t + dur)\n    src.connect(bp).connect(v).connect(out); src.start(t)\n  }\n  ;({\n    tick: () => tone(2600, 1900, 0.022, 'triangle', 0.3),   // detent, step, letter\n    tap: () => tone(640, 520, 0.07, 'sine', 0.6),           // press\n    pop: () => tone(900, 460, 0.09, 'sine', 0.7),           // something opens / appears\n    thunk: () => tone(170, 85, 0.14, 'sine', 0.9),          // weight, impact\n    whoosh: () => air(0.3, 500, 2600, 0.4),                 // big move in\n    swish: () => air(0.18, 2200, 800, 0.28),                // quick move / close\n    rise: () => tone(300, 780, 0.55, 'sine', 0.3),          // hold / charge\n    fall: () => tone(720, 280, 0.32, 'sine', 0.26),         // release / cancel\n    chime: () => { tone(1046, 1046, 0.5, 'sine', 0.42); tone(1568, 1568, 0.65, 'sine', 0.28, 0.07) }, // done\n    blip: () => tone(1320, 1320, 0.045, 'square', 0.08),    // status, typing\n  })[kind]?.()\n}\n\n// Morphing button: the button becomes its own progress indicator. The label leaves first, the width folds into a\n// circle, an arc spins, the check draws with one 5% beat as it lands while the ink turns to the accent, then the\n// button opens back into the label. The pill wears the glow CTA from phamhuyds/PHAXIS: on hover (and while it works)\n// a light runs round the rim and a soft blurred halo turns with it; the button leans toward the pointer on a spring.\n// Use <MorphButton state=\"idle\" | \"loading\" | \"done\" onClick={…}>Label</MorphButton>; you own the state machine.\n\n// Motion values. Phation Studio exports this object: paste a tuned one over it.\nexport const MOTION = {\n  morph: [0.16, 1, 0.3, 1], // width ↔ circle\n  morphMs: 500,\n  spinMs: 600,\n  checkMs: 300,\n  labelOutMs: 120,\n  glowSpin: 2200, // ms per lap of the rim light\n  magnet: { type: 'spring', stiffness: 260, damping: 18, mass: 0.6 }, // pull toward the pointer (30% of the offset)\n}\n// the done state's accent. Studio › Look › Colour picks it.\nexport const ACCENTS = [{ label: 'Green', color: '#178a4a' }, { label: 'Blue', color: '#0b6fd8' }, { label: 'Violet', color: '#6d28d9' }, { label: 'Orange', color: '#c2410c' }]\nexport const params = {\n  morph: { type: 'ease', label: 'Width morph', value: MOTION.morph },\n  morphMs: { type: 'ms', label: 'Morph duration', value: MOTION.morphMs, min: 150, max: 1200 },\n  spinMs: { type: 'ms', label: 'Spinner', value: MOTION.spinMs, min: 200, max: 1500 },\n  checkMs: { type: 'ms', label: 'Check draw', value: MOTION.checkMs, min: 100, max: 800 },\n  labelOutMs: { type: 'ms', label: 'Label out', value: MOTION.labelOutMs, min: 0, max: 400 },\n  glowSpin: { type: 'ms', label: 'Glow lap', value: MOTION.glowSpin, min: 800, max: 5000, step: 100 },\n  magnet: { type: 'spring', label: 'Magnet', ...MOTION.magnet },\n  glow: { type: 'pick', label: 'Glow', value: 0, group: 'Glow', options: [{ label: 'Hover' }, { label: 'Always' }] },\n  accent: { type: 'pick', label: 'Colour', value: 0, options: ACCENTS },\n  sound: { type: 'pick', label: 'Sound', value: 1, toggle: true, group: 'Sound', options: [{ label: 'Off' }, { label: 'On' }] },\n  volume: { type: 'num', label: 'Volume', value: 60, min: 0, max: 100, unit: '%', group: 'Sound' },\n}\nconst OPA = [0.4, 0, 0.2, 1]\nconst PILL = 'var(--demo-pill, #161618)' // flat ink (lighter graphite at night)\n\n// Glow CTA: a conic light (violet → white → blue) masked to a 1.5 px rim, plus the same light blurred 9 px behind as a\n// halo. --ga is a registered angle so the gradient itself can turn. .on = forced (loading / Always).\nconst GLOW_CSS = `@property --ga { syntax: '<angle>'; initial-value: 0deg; inherits: true; }\n@keyframes gm-spin { to { --ga: 360deg; } }\n.gm-glow { position: relative; display: inline-grid; isolation: isolate; --ga: 0deg; border-radius: 999px; }\n.gm-glow .gm-r, .gm-glow .gm-w i { position: absolute; inset: 0; border-radius: inherit;\n  background: conic-gradient(from var(--ga), transparent 0 52%, rgb(123 92 255 / 0) 56%, #7b5cff 68%, #e9e4ff 76%, #2f6bff 84%, transparent 94%);\n  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;\n  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); }\n.gm-glow .gm-r { inset: -1.5px; padding: 1.5px; opacity: 0; transition: opacity .4s cubic-bezier(.4,0,.2,1); pointer-events: none; z-index: 2; }\n.gm-glow .gm-w { position: absolute; inset: -6px; border-radius: 999px; filter: blur(9px); opacity: 0; transition: opacity .5s cubic-bezier(.4,0,.2,1); pointer-events: none; z-index: -1; }\n.gm-glow .gm-w i { padding: 5px; }\n.gm-glow > button { outline: none; box-shadow: 0 0 0 0 rgb(110 90 255 / 0); transition: box-shadow .45s cubic-bezier(.4,0,.2,1); }\n.gm-glow:hover, .gm-glow:focus-within, .gm-glow.on { animation: gm-spin var(--gm-lap, 2.2s) linear infinite; }\n.gm-glow:hover > button, .gm-glow:has(:focus-visible) > button, .gm-glow.on > button { box-shadow: 0 10px 30px -10px rgb(110 90 255 / .55); }\n.gm-glow:hover .gm-r, .gm-glow:hover .gm-w, .gm-glow:has(:focus-visible) .gm-r, .gm-glow:has(:focus-visible) .gm-w, .gm-glow.on .gm-r, .gm-glow.on .gm-w { opacity: 1; }\n@media (prefers-reduced-motion: reduce) { .gm-glow, .gm-glow.on, .gm-glow:hover { animation: none; } }`\n\nexport function MorphButton({ state = 'idle', onClick, children, width = 220, height = 52, color = PILL, accent = '#178a4a', glow = 0, values }) {\n  const m = { ...MOTION, ...values }\n  const x = useSpring(0, m.magnet), y = useSpring(0, m.magnet)\n  const pull = e => { if (reduce || e.pointerType !== 'mouse') return; const r = e.currentTarget.getBoundingClientRect(); x.set((e.clientX - r.left - r.width / 2) * 0.3); y.set((e.clientY - r.top - r.height / 2) * 0.3) }\n  const round = state !== 'idle', s = v => v / 1000\n  const [down, setDown] = useState(false)\n  // MotionConfig reducedMotion=\"user\" only covers transforms: the width morph has to be cut by hand.\n  const reduce = useReducedMotion()\n  return (\n    <motion.span className={`gm-glow${glow || state === 'loading' ? ' on' : ''}`} style={{ x, y, '--gm-lap': `${m.glowSpin}ms` }} onPointerMove={pull} onPointerLeave={() => { x.set(0); y.set(0) }}>\n      <style>{GLOW_CSS}</style>\n      <span className=\"gm-w\" aria-hidden=\"true\"><i /></span><span className=\"gm-r\" aria-hidden=\"true\" />\n    <motion.button\n      onClick={onClick} aria-busy={state === 'loading'}\n      onPointerDown={() => !round && setDown(true)} onPointerUp={() => setDown(false)} onPointerLeave={() => setDown(false)}\n            animate={{ width: round ? height : width, scale: state === 'done' ? [1, 1.05, 1] : down ? 0.97 : 1 }}\n      transition={{ width: reduce ? { duration: 0 } : { duration: s(m.morphMs), ease: m.morph, delay: round ? s(m.labelOutMs) : 0 }, scale: state === 'done' ? { duration: 0.3, ease: OPA, delay: 0.04 } : { type: 'spring', stiffness: 600, damping: 30 }, y: { duration: 0.16, ease: OPA } }}\n      style={{\n        position: 'relative', height, border: 0, borderRadius: height / 2, background: color, color: '#fff', cursor: 'pointer',\n        display: 'grid', placeItems: 'center', overflow: 'hidden', font: '500 16px/1 Inter, system-ui, sans-serif',\n      }}\n    >\n      {/* the accent arrives with the check and leaves before the label returns */}\n      <motion.span aria-hidden initial={false} animate={{ opacity: state === 'done' ? 1 : 0 }} transition={{ duration: 0.2, ease: OPA }}\n        style={{ position: 'absolute', inset: 0, background: accent }} />\n      <AnimatePresence initial={false}>\n        {state === 'idle' && (\n          <motion.span key=\"l\" style={{ gridArea: '1/1', whiteSpace: 'nowrap', position: 'relative' }}\n            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0, transition: { duration: 0.35, ease: m.morph, delay: s(m.morphMs) * 0.6 } }}\n            exit={{ opacity: 0, transition: { duration: s(m.labelOutMs), ease: OPA } }}>\n            {children}\n          </motion.span>\n        )}\n        {state === 'loading' && (\n          <motion.svg key=\"sp\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" style={{ gridArea: '1/1', position: 'relative' }} aria-label=\"Loading\"\n            initial={{ opacity: 0, rotate: 0 }} animate={{ opacity: 1, rotate: 360 }} exit={{ opacity: 0, transition: { duration: 0.16, ease: OPA } }}\n            transition={{ opacity: { duration: 0.15, delay: s(m.morphMs) }, rotate: { duration: s(m.spinMs), ease: OPA, delay: s(m.morphMs) } }}>\n            <motion.circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2.4\" strokeLinecap=\"round\"\n              initial={{ pathLength: 0.25 }} animate={{ pathLength: 0.8 }} transition={{ duration: s(m.spinMs), ease: OPA, delay: s(m.morphMs) }} />\n          </motion.svg>\n        )}\n        {state === 'done' && (\n          <motion.svg key=\"ck\" width=\"22\" height=\"22\" viewBox=\"0 0 22 22\" style={{ gridArea: '1/1', position: 'relative' }} aria-label=\"Done\" exit={{ opacity: 0, transition: { duration: 0.15, ease: OPA } }}>\n            <motion.path d=\"M5 11.5l4 4L17 7\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2.6\" strokeLinecap=\"round\" strokeLinejoin=\"round\"\n              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: s(m.checkMs), ease: m.morph, delay: 0.04 }} />\n          </motion.svg>\n        )}\n      </AnimatePresence>\n    </motion.button>\n    </motion.span>\n  )\n}\n\n// ---------------- demo: fake checkout that resolves after the spinner, holds the check, then resets ----------------\nexport default function BuyMorph({ values }) {\n  const m = { ...MOTION, ...values }\n  const [state, setState] = useState('idle')\n  const t = useRef([])\n  const el = useRef(null)\n  const buy = e => {\n    if (state !== 'idle') return\n    if (e?.currentTarget) { el.current = e.currentTarget; cue(el.current, 'tap', m) }\n    setState('loading')\n    const done = m.morphMs + m.spinMs + 20 // the spinner starts when the morph is under way\n    t.current = [setTimeout(() => { cue(el.current, 'chime', m); setState('done') }, done), setTimeout(() => setState('idle'), done + 950)]\n  }\n  useEffect(() => { const id = window.__phAuto ? 0 : setTimeout(buy, 700); // intro, skipped while Auto play drives it\n    return () => { clearTimeout(id); t.current.forEach(clearTimeout) } }, [])\n  return <MorphButton state={state} onClick={buy} values={m} accent={(ACCENTS[m.accent] ?? ACCENTS[0]).color} glow={m.glow}>Buy it now</MorphButton>\n}\n"
   },
   {
    "slug": "product-hotspots",
@@ -568,7 +692,8 @@
     "/img/ex/roadster.webp"
    ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  pop: { type: 'spring', stiffness: 420, damping: 30, mass: 1 }, // tooltip out of the dot + dot scale\n  text: [0.16, 1, 0.3, 1], // tooltip lines rise\n  textMs: 350,\n  breathe: 1600, // ms per idle pulse\n  camera: { type: 'spring', stiffness: 170, damping: 26, mass: 1 }, // push-in / pull-out on the photo: soft, no overshoot\n  zoom: 1.9, // how far the camera pushes in on a detail\n}"
+   "motion": "export const MOTION = {\n  pop: { type: 'spring', stiffness: 420, damping: 30, mass: 1 }, // tooltip out of the dot + dot scale\n  text: [0.16, 1, 0.3, 1], // tooltip lines rise\n  textMs: 350,\n  breathe: 1600, // ms per idle pulse\n  camera: { type: 'spring', stiffness: 170, damping: 26, mass: 1 }, // push-in / pull-out on the photo: soft, no overshoot\n  zoom: 1.9, // how far the camera pushes in on a detail\n}",
+   "free": false
   },
   {
    "slug": "callouts",
@@ -596,7 +721,8 @@
     "/img/ex/pocket-turntable.webp"
    ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  dot: { type: 'spring', stiffness: 400, damping: 30, mass: 1 }, // dot springs in\n  line: [0.16, 1, 0.3, 1], // line draws out + label rises\n  lineMs: 450,\n  labelMs: 350,\n  gap: 600, // ms between callouts\n}"
+   "motion": "export const MOTION = {\n  dot: { type: 'spring', stiffness: 400, damping: 30, mass: 1 }, // dot springs in\n  line: [0.16, 1, 0.3, 1], // line draws out + label rises\n  lineMs: 450,\n  labelMs: 350,\n  gap: 600, // ms between callouts\n}",
+   "free": false
   },
   {
    "slug": "hold-redeem",
@@ -623,7 +749,9 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  hold: 1200, // ms of pressing to redeem (linear on purpose: it is a progress bar)\n  drain: [0.16, 1, 0.3, 1], // fill drains back if released early\n  drainMs: 350,\n  flip: { type: 'spring', stiffness: 160, damping: 20, mass: 1 }, // voucher turns over\n  check: { type: 'spring', stiffness: 400, damping: 18, mass: 1 }, // tick pops on the back\n}"
+   "motion": "export const MOTION = {\n  hold: 1200, // ms of pressing to redeem (linear on purpose: it is a progress bar)\n  drain: [0.16, 1, 0.3, 1], // fill drains back if released early\n  drainMs: 350,\n  flip: { type: 'spring', stiffness: 160, damping: 20, mass: 1 }, // voucher turns over\n  check: { type: 'spring', stiffness: 400, damping: 18, mass: 1 }, // tick pops on the back\n}",
+   "free": true,
+   "code": "import { useEffect, useRef, useState } from 'react'\nimport { motion, useMotionValue, animate } from 'motion/react'\n\n// ── Sound: tiny Web Audio cues, synthesized in code (no files). A cue only plays right after a real visitor input\n// inside this component (auto-played intros stay silent) and never under an element with data-sound=\"off\".\nconst SND = typeof window === 'undefined' ? null : (window.__cueIn ||= (() => {\n  const s = { t: -1e9, el: null, path: null, down: null, last: {} }\n  const on = ev => {\n    if (!ev.isTrusted) return\n    s.t = performance.now()\n    const held = ev.type === 'pointermove' && ev.buttons && s.down // a drag keeps belonging to where it started\n    if (ev.type === 'pointerdown') s.down = ev.composedPath()\n    s.path = held ? s.down : (ev.type === 'pointerup' && s.down) || ev.composedPath(); s.el = s.path[0]\n    if (ev.type === 'pointerup') s.down = null\n  }\n  for (const e of ['pointerdown', 'pointermove', 'pointerup', 'keydown', 'wheel', 'touchstart']) addEventListener(e, on, { capture: true, passive: true })\n  return s\n})())\nfunction cue(root, kind, { sound = 1, volume = 60, gap = 28, pitch = 1 } = {}) {\n  const S = SND, now = performance.now()\n  if (!S || !sound || !volume || !root || !(S.path?.includes(root) || root.contains?.(S.el)) || now - S.t > 3000 || root.closest?.('[data-sound=\"off\"]')) return\n  if (now - (S.last[kind] || 0) < gap) return; S.last[kind] = now\n  const ac = (S.ac ||= new (window.AudioContext || window.webkitAudioContext)()); if (ac.state === 'suspended') ac.resume()\n  const t = ac.currentTime, out = ac.createGain(); out.gain.value = (volume / 100) * 0.45; out.connect(ac.destination)\n  const tone = (f0, f1, dur, type = 'sine', g = 1, at = 0) => {\n    const o = ac.createOscillator(), v = ac.createGain(); o.type = type\n    o.frequency.setValueAtTime(f0 * pitch, t + at); o.frequency.exponentialRampToValueAtTime(f1 * pitch, t + at + dur)\n    v.gain.setValueAtTime(0.0001, t + at); v.gain.exponentialRampToValueAtTime(g, t + at + 0.005); v.gain.exponentialRampToValueAtTime(0.0001, t + at + dur)\n    o.connect(v).connect(out); o.start(t + at); o.stop(t + at + dur + 0.03)\n  }\n  const air = (dur, f0, f1, g = 1) => { // filtered noise sweep\n    const b = ac.createBuffer(1, Math.ceil(ac.sampleRate * dur), ac.sampleRate), d = b.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1\n    const src = ac.createBufferSource(), bp = ac.createBiquadFilter(), v = ac.createGain(); src.buffer = b; bp.type = 'bandpass'; bp.Q.value = 1.4\n    bp.frequency.setValueAtTime(f0, t); bp.frequency.exponentialRampToValueAtTime(f1, t + dur)\n    v.gain.setValueAtTime(0.0001, t); v.gain.linearRampToValueAtTime(g, t + dur * 0.35); v.gain.exponentialRampToValueAtTime(0.0001, t + dur)\n    src.connect(bp).connect(v).connect(out); src.start(t)\n  }\n  ;({\n    tick: () => tone(2600, 1900, 0.022, 'triangle', 0.3),   // detent, step, letter\n    tap: () => tone(640, 520, 0.07, 'sine', 0.6),           // press\n    pop: () => tone(900, 460, 0.09, 'sine', 0.7),           // something opens / appears\n    thunk: () => tone(170, 85, 0.14, 'sine', 0.9),          // weight, impact\n    whoosh: () => air(0.3, 500, 2600, 0.4),                 // big move in\n    swish: () => air(0.18, 2200, 800, 0.28),                // quick move / close\n    rise: () => tone(300, 780, 0.55, 'sine', 0.3),          // hold / charge\n    fall: () => tone(720, 280, 0.32, 'sine', 0.26),         // release / cancel\n    chime: () => { tone(1046, 1046, 0.5, 'sine', 0.42); tone(1568, 1568, 0.65, 'sine', 0.28, 0.07) }, // done\n    blip: () => tone(1320, 1320, 0.045, 'square', 0.08),    // status, typing\n  })[kind]?.()\n}\n\n// Voucher redemption: redeeming is deliberate, so it is a hold. The accent fills the ink pill while pressed (1.2 s),\n// drains back quickly if you let go early, and when it completes the voucher turns over to show the code.\n// Phation Soft: white card, hero value, flat ink pill, one green accent, code in a well.\n\n// ── Phation Soft · material tokens ──\nconst S = {\n  card: 'var(--demo-card, #ffffff)', well: 'var(--demo-well, #f4f4f5)',\n  ink: 'var(--demo-ink, #161618)', ink2: 'var(--demo-ink2, #66666d)', line: 'var(--demo-line, rgba(0,0,0,.06))',\n  shCard: 'var(--demo-sh-card, 0 0 0 1px rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.04), 0 12px 28px -10px rgba(0,0,0,.14))',\n  shWell: 'var(--demo-sh-well, inset 0 1px 2px rgba(0,0,0,.07), inset 0 0 0 1px rgba(0,0,0,.04))',\n  key: 'var(--demo-well, #f2f2f3)',\n  shKey: 'none',\n  pill: 'var(--demo-pill, #161618)',\n  shPill: 'none',\n  font: 'Inter, \"SF Pro Text\", system-ui, sans-serif',\n}\n// white text ≥ 4.5 : 1 on every option. Studio › Look › Colour picks it.\nexport const ACCENTS = [{ label: 'Green', color: '#15803d' }, { label: 'Blue', color: '#0b6fd8' }, { label: 'Violet', color: '#6d28d9' }, { label: 'Red', color: '#c42a1f' }]\nconst tint = (hex, amt = 14) => `color-mix(in srgb, ${hex} ${amt}%, var(--demo-card, #fff))`\n\n// Motion values. Phation Studio exports this object: paste a tuned one over it.\nexport const MOTION = {\n  hold: 1200, // ms of pressing to redeem (linear on purpose: it is a progress bar)\n  drain: [0.16, 1, 0.3, 1], // fill drains back if released early\n  drainMs: 350,\n  flip: { type: 'spring', stiffness: 160, damping: 20, mass: 1 }, // voucher turns over\n  check: { type: 'spring', stiffness: 400, damping: 18, mass: 1 }, // tick pops on the back\n}\nexport const params = {\n  flip: { type: 'spring', label: 'Card flip', ...MOTION.flip },\n  check: { type: 'spring', label: 'Tick pop', ...MOTION.check },\n  drain: { type: 'ease', label: 'Drain curve', value: MOTION.drain },\n  hold: { type: 'ms', label: 'Hold time', value: MOTION.hold, min: 400, max: 3000, step: 50 },\n  drainMs: { type: 'ms', label: 'Drain', value: MOTION.drainMs, min: 100, max: 1000 },\n  accent: { type: 'pick', label: 'Colour', value: 0, options: ACCENTS },\n  sound: { type: 'pick', label: 'Sound', value: 1, toggle: true, group: 'Sound', options: [{ label: 'Off' }, { label: 'On' }] },\n  volume: { type: 'num', label: 'Volume', value: 60, min: 0, max: 100, unit: '%', group: 'Sound' },\n}\n\nconst BARS = Array.from({ length: 46 }, (_, i) => ((i * 7919) % 5) + 1)\nconst face = { position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', borderRadius: 22, background: S.card, color: S.ink, boxShadow: S.shCard, padding: 20, display: 'flex', flexDirection: 'column' }\n\nexport default function HoldRedeem({ values }) {\n  const m = { ...MOTION, ...values }, HOLD = m.hold / 1000, ACCENT = (ACCENTS[m.accent] ?? ACCENTS[0]).color\n  const p = useMotionValue(0), run = useRef(null)\n  const [done, setDone] = useState(false), [down, setDown] = useState(false)\n  \n  const el = useRef(null)\n  const press = e => { if (done) return; if (e?.currentTarget) { el.current = e.currentTarget; cue(el.current, 'rise', { ...m, pitch: 0.9 }) } setDown(true); run.current?.stop(); run.current = animate(p, 1, { duration: HOLD * (1 - p.get()), ease: 'linear', onComplete: () => { cue(el.current, 'chime', m); setDown(false); setDone(true) } }) }\n  const release = e => { if (down && !done && p.get() < 1) cue(e?.currentTarget, 'fall', m); setDown(false); if (done) return; run.current?.stop(); run.current = animate(p, 0, { duration: m.drainMs / 1000, ease: m.drain }) }\n  const reset = () => { setDone(false); run.current?.stop(); run.current = animate(p, 0, { duration: m.drainMs / 1000, ease: m.drain, delay: 0.15 }) } // drains while the card turns back\n  // demo: one full hold, then turn back\n  useEffect(() => { if (window.__phAuto) return; const a = setTimeout(press, 600), b = setTimeout(reset, 2400 + m.hold); return () => { clearTimeout(a); clearTimeout(b); run.current?.stop() } }, [])\n  return (\n    <div style={{ width: 290, height: 320, perspective: 1000, fontFamily: S.font }}>\n      <motion.div animate={{ rotateY: done ? 180 : 0 }} transition={m.flip} style={{ position: 'relative', width: '100%', height: '100%', transformStyle: 'preserve-3d' }}>\n        {/* front: voucher */}\n        <div style={face}>\n          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: S.ink2 }}><span>Rewards voucher</span><span>Until 31 Dec</span></div>\n          <div style={{ marginTop: 24, fontSize: 48, fontWeight: 500, letterSpacing: '-.03em', lineHeight: 1.1, fontVariantNumeric: 'tabular-nums' }}>$10 <span style={{ color: S.ink2 }}>off</span></div>\n          <div style={{ fontSize: 14, color: S.ink2, marginTop: 8 }}>your total bill</div>\n          <div style={{ height: 1, background: S.line, margin: '20px 0 16px' }} />\n          <div style={{ fontSize: 12, color: S.ink2, lineHeight: 1.5, flex: 1 }}>Valid at participating stores. One voucher per bill.</div>\n          <motion.button onPointerDown={press} onPointerUp={release} onPointerLeave={release} onPointerCancel={release}\n            animate={{ scale: down ? 0.98 : 1 }} transition={{ type: 'spring', stiffness: 600, damping: 30 }}\n            style={{ position: 'relative', width: '100%', height: 48, border: 0, borderRadius: 24, overflow: 'hidden', cursor: 'pointer', background: S.pill, color: '#fff', font: `500 15px/1 ${S.font}`, touchAction: 'none', userSelect: 'none' }}>\n            <motion.span style={{ position: 'absolute', inset: 0, scaleX: p, transformOrigin: '0 50%', background: ACCENT }} />\n            <span style={{ position: 'relative' }}>Hold to redeem</span>\n          </motion.button>\n        </div>\n        {/* back: code */}\n        <div style={{ ...face, transform: 'rotateY(180deg)', alignItems: 'center' }}>\n          <motion.div initial={false} animate={{ scale: done ? 1 : 0.6, opacity: done ? 1 : 0 }} transition={{ ...m.check, delay: 0.25 }}\n            style={{ width: 44, height: 44, borderRadius: 22, background: tint(ACCENT, 16), color: ACCENT, display: 'grid', placeItems: 'center' }}>\n            <svg width=\"20\" height=\"20\" viewBox=\"0 0 22 22\"><path d=\"M5 11.5l4 4L17 7\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2.4\" strokeLinecap=\"round\" strokeLinejoin=\"round\" /></svg>\n          </motion.div>\n          <div style={{ fontSize: 17, fontWeight: 600, marginTop: 12 }}>Voucher redeemed</div>\n          <div style={{ fontSize: 13, color: S.ink2, marginTop: 4 }}>Show this code at the counter</div>\n          <div style={{ marginTop: 16, width: '100%', padding: '14px 14px 10px', borderRadius: 14, background: '#fff', boxShadow: S.shWell, color: '#111', textAlign: 'center' }}>\n            <div style={{ display: 'flex', justifyContent: 'center', gap: 2, height: 54 }}>{BARS.map((w, i) => <span key={i} style={{ width: w, background: i % 3 ? '#111' : 'transparent' }} />)}</div>\n            <div style={{ font: '500 13px/1 \"Geist Mono\", monospace', letterSpacing: '.16em', marginTop: 8 }}>TT 5000 2611</div>\n          </div>\n          <motion.button onClick={e => { cue(e.currentTarget, 'swish', m); reset() }} whileTap={{ scale: 0.97 }} transition={{ type: 'spring', stiffness: 600, damping: 30 }}\n            style={{ marginTop: 'auto', height: 36, padding: '0 22px', border: 0, borderRadius: 18, background: S.key, color: S.ink, font: `500 13px/1 ${S.font}`, cursor: 'pointer' }}>Done</motion.button>\n        </div>\n      </motion.div>\n    </div>\n  )\n}\n"
   },
   {
    "slug": "digit-roll",
@@ -654,7 +782,8 @@
     "/img/ex/headphones.webp"
    ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  digit: { type: 'spring', stiffness: 400, damping: 30, mass: 1 }, // ~4% overshoot\n  stagger: 50, // ms between digits, left → right\n  lead: 80, // ms the total waits after the quantity\n  press: { type: 'spring', stiffness: 600, damping: 30, mass: 1 }, // keycap sink\n}"
+   "motion": "export const MOTION = {\n  digit: { type: 'spring', stiffness: 400, damping: 30, mass: 1 }, // ~4% overshoot\n  stagger: 50, // ms between digits, left → right\n  lead: 80, // ms the total waits after the quantity\n  press: { type: 'spring', stiffness: 600, damping: 30, mass: 1 }, // keycap sink\n}",
+   "free": false
   },
   {
    "slug": "scroll-text-reveal",
@@ -680,7 +809,9 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  scroll: [0.65, 0, 0.35, 1], // auto-scroll curve\n  scrollMs: 2400,\n  startDelay: 300,\n}"
+   "motion": "export const MOTION = {\n  scroll: [0.65, 0, 0.35, 1], // auto-scroll curve\n  scrollMs: 2400,\n  startDelay: 300,\n}",
+   "free": true,
+   "code": "import { useEffect, useRef } from 'react'\nimport { motion, useScroll, useTransform, animate } from 'motion/react'\n\n// ── Sound: tiny Web Audio cues, synthesized in code (no files). A cue only plays right after a real visitor input\n// inside this component (auto-played intros stay silent) and never under an element with data-sound=\"off\".\nconst SND = typeof window === 'undefined' ? null : (window.__cueIn ||= (() => {\n  const s = { t: -1e9, el: null, path: null, down: null, last: {} }\n  const on = ev => {\n    if (!ev.isTrusted) return\n    s.t = performance.now()\n    const held = ev.type === 'pointermove' && ev.buttons && s.down // a drag keeps belonging to where it started\n    if (ev.type === 'pointerdown') s.down = ev.composedPath()\n    s.path = held ? s.down : (ev.type === 'pointerup' && s.down) || ev.composedPath(); s.el = s.path[0]\n    if (ev.type === 'pointerup') s.down = null\n  }\n  for (const e of ['pointerdown', 'pointermove', 'pointerup', 'keydown', 'wheel', 'touchstart']) addEventListener(e, on, { capture: true, passive: true })\n  return s\n})())\nfunction cue(root, kind, { sound = 1, volume = 60, gap = 28, pitch = 1 } = {}) {\n  const S = SND, now = performance.now()\n  if (!S || !sound || !volume || !root || !(S.path?.includes(root) || root.contains?.(S.el)) || now - S.t > 3000 || root.closest?.('[data-sound=\"off\"]')) return\n  if (now - (S.last[kind] || 0) < gap) return; S.last[kind] = now\n  const ac = (S.ac ||= new (window.AudioContext || window.webkitAudioContext)()); if (ac.state === 'suspended') ac.resume()\n  const t = ac.currentTime, out = ac.createGain(); out.gain.value = (volume / 100) * 0.45; out.connect(ac.destination)\n  const tone = (f0, f1, dur, type = 'sine', g = 1, at = 0) => {\n    const o = ac.createOscillator(), v = ac.createGain(); o.type = type\n    o.frequency.setValueAtTime(f0 * pitch, t + at); o.frequency.exponentialRampToValueAtTime(f1 * pitch, t + at + dur)\n    v.gain.setValueAtTime(0.0001, t + at); v.gain.exponentialRampToValueAtTime(g, t + at + 0.005); v.gain.exponentialRampToValueAtTime(0.0001, t + at + dur)\n    o.connect(v).connect(out); o.start(t + at); o.stop(t + at + dur + 0.03)\n  }\n  const air = (dur, f0, f1, g = 1) => { // filtered noise sweep\n    const b = ac.createBuffer(1, Math.ceil(ac.sampleRate * dur), ac.sampleRate), d = b.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1\n    const src = ac.createBufferSource(), bp = ac.createBiquadFilter(), v = ac.createGain(); src.buffer = b; bp.type = 'bandpass'; bp.Q.value = 1.4\n    bp.frequency.setValueAtTime(f0, t); bp.frequency.exponentialRampToValueAtTime(f1, t + dur)\n    v.gain.setValueAtTime(0.0001, t); v.gain.linearRampToValueAtTime(g, t + dur * 0.35); v.gain.exponentialRampToValueAtTime(0.0001, t + dur)\n    src.connect(bp).connect(v).connect(out); src.start(t)\n  }\n  ;({\n    tick: () => tone(2600, 1900, 0.022, 'triangle', 0.3),   // detent, step, letter\n    tap: () => tone(640, 520, 0.07, 'sine', 0.6),           // press\n    pop: () => tone(900, 460, 0.09, 'sine', 0.7),           // something opens / appears\n    thunk: () => tone(170, 85, 0.14, 'sine', 0.9),          // weight, impact\n    whoosh: () => air(0.3, 500, 2600, 0.4),                 // big move in\n    swish: () => air(0.18, 2200, 800, 0.28),                // quick move / close\n    rise: () => tone(300, 780, 0.55, 'sine', 0.3),          // hold / charge\n    fall: () => tone(720, 280, 0.32, 'sine', 0.26),         // release / cancel\n    chime: () => { tone(1046, 1046, 0.5, 'sine', 0.42); tone(1568, 1568, 0.65, 'sine', 0.28, 0.07) }, // done\n    blip: () => tone(1320, 1320, 0.045, 'square', 0.08),    // status, typing\n  })[kind]?.()\n}\n\n// Scroll-linked paragraph: each character fades #666 → #fff as the paragraph\n// crosses the viewport, scroll offset [\"start 0.75\", \"start 0.15\"]. Words split the progress evenly, letters split their word.\n// Here the \"viewport\" is the card itself: scroll inside it (it auto-scrolls once to show the effect).\nconst TEXT = 'Every project is a chance to blend design and development, shaping bold interactive ideas into sleek digital realities — built with intent, speed, and visual clarity.'\n\n// Motion values. Phation Studio exports this object: paste a tuned one over it.\n// The reveal itself is scroll-linked (no timing); these drive the demo's one-off auto-scroll.\nexport const MOTION = {\n  scroll: [0.65, 0, 0.35, 1], // auto-scroll curve\n  scrollMs: 2400,\n  startDelay: 300,\n}\nexport const params = {\n  scroll: { type: 'ease', label: 'Auto-scroll curve', value: MOTION.scroll, bounce: false },\n  scrollMs: { type: 'ms', label: 'Auto-scroll', value: MOTION.scrollMs, min: 600, max: 5000, step: 100 },\n  startDelay: { type: 'ms', label: 'Start delay', value: MOTION.startDelay, min: 0, max: 1500 },\n  sound: { type: 'pick', label: 'Sound', value: 1, toggle: true, group: 'Sound', options: [{ label: 'Off' }, { label: 'On' }] },\n  volume: { type: 'num', label: 'Volume', value: 60, min: 0, max: 100, unit: '%', group: 'Sound' },\n}\n\nfunction Char({ c, p, a, b }) {\n  const opacity = useTransform(p, [a, b], [0.22, 1]) // ink at 22% → 100%: reads on the light card and the dark one\n  return <motion.span style={{ opacity }}>{c}</motion.span>\n}\n\nexport default function ScrollTextReveal({ values }) {\n  const m = { ...MOTION, ...values }\n  const box = useRef(null), target = useRef(null)\n  const { scrollYProgress } = useScroll({ container: box, target, offset: ['start 0.75', 'start 0.15'] })\n  useEffect(() => {\n    const el = box.current\n    if (window.__phAuto) return // Auto play scrolls it instead\n    // stop where progress just reaches 1: paragraph top at 15% of the box\n    const c = animate(0, target.current.offsetTop - el.clientHeight * 0.15 + 4, { duration: m.scrollMs / 1000, ease: m.scroll, delay: m.startDelay / 1000, onUpdate: v => { el.scrollTop = v } })\n    const stop = () => c.stop()\n    el.addEventListener('wheel', stop, { passive: true }); el.addEventListener('touchstart', stop, { passive: true })\n    return () => { c.stop(); el.removeEventListener('wheel', stop); el.removeEventListener('touchstart', stop) }\n  }, [])\n  const words = TEXT.split(' '), n = words.length\n  // one soft tick per word as it lights up (silent while the intro scrolls on its own)\n  const live = useRef(m); live.current = m\n  useEffect(() => { let w = -1; return scrollYProgress.on('change', p => { const k = Math.floor(p * n); if (k !== w) { w = k; if (k > 0 && k < n) cue(box.current, 'tick', { ...live.current, gap: 40 }) } }) }, [])\n  return (\n    <div ref={box} style={{ position: 'relative', width: 440, height: 300, overflowY: 'auto', borderRadius: 22, background: 'var(--demo-card, #fff)', boxShadow: 'var(--demo-sh-card, 0 0 0 1px rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.04), 0 12px 28px -10px rgba(0,0,0,.14))', scrollbarWidth: 'none', overscrollBehavior: 'contain' }}>\n      <div style={{ height: 210, display: 'grid', placeItems: 'end center', paddingBottom: 18, font: '500 12px/1 Inter, sans-serif', letterSpacing: '.08em', color: 'var(--demo-ink2, #66666d)', textTransform: 'uppercase' }}>Scroll ↓</div>\n      <p ref={target} style={{ margin: 0, padding: '0 32px', display: 'flex', flexWrap: 'wrap', font: '500 28px/34px Inter, system-ui, sans-serif', letterSpacing: '-.6px', color: 'var(--demo-ink, #161618)' }}>\n        {words.map((w, i) => (\n          <span key={i} style={{ whiteSpace: 'pre' }}>\n            {(w + ' ').split('').map((ch, j) => <Char key={j} c={ch} p={scrollYProgress} a={(i + j / (w.length + 1)) / n} b={(i + (j + 1) / (w.length + 1)) / n} />)}\n          </span>\n        ))}\n      </p>\n      <div style={{ height: 230 }} />\n    </div>\n  )\n}\n"
   },
   {
    "slug": "reel-card",
@@ -710,7 +841,8 @@
     "/media/reel-gallery.mp4"
    ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  grow: [0.16, 1, 0.3, 1], // card → player and back\n  growMs: 750,\n  scrimMs: 500,\n  closeDelay: 200, // close button arrives last\n  pill: { type: 'spring', stiffness: 420, damping: 34, mass: 0.6 }, // play pill follows the cursor\n}"
+   "motion": "export const MOTION = {\n  grow: [0.16, 1, 0.3, 1], // card → player and back\n  growMs: 750,\n  scrimMs: 500,\n  closeDelay: 200, // close button arrives last\n  pill: { type: 'spring', stiffness: 420, damping: 34, mass: 0.6 }, // play pill follows the cursor\n}",
+   "free": false
   },
   {
    "slug": "day-night",
@@ -735,7 +867,8 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  fade: [0.65, 0, 0.35, 1], // the whole surface, one curve\n  fadeMs: 900,\n}"
+   "motion": "export const MOTION = {\n  fade: [0.65, 0, 0.35, 1], // the whole surface, one curve\n  fadeMs: 900,\n}",
+   "free": false
   },
   {
    "slug": "image-cursor",
@@ -776,7 +909,8 @@
     "/img/gal/gal-13.webp"
    ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  follow: { type: 'spring', stiffness: 220, damping: 26, mass: 0.8 }, // lag behind the pointer\n  pop: { type: 'spring', stiffness: 300, damping: 26, mass: 1 }, // scale in / out from the pointer\n  cycle: 520, // ms per photo\n}"
+   "motion": "export const MOTION = {\n  follow: { type: 'spring', stiffness: 220, damping: 26, mass: 0.8 }, // lag behind the pointer\n  pop: { type: 'spring', stiffness: 300, damping: 26, mass: 1 }, // scale in / out from the pointer\n  cycle: 520, // ms per photo\n}",
+   "free": false
   },
   {
    "slug": "work-card-hover",
@@ -805,7 +939,8 @@
     "/img/gal/gal-12.webp"
    ],
    "tunable": true,
-   "motion": "export const MOTION = {\n  ease: [0.16, 1, 0.3, 1], // line, title roll and image zoom\n  rollMs: 600, // title roll + line draw\n  zoomMs: 900, // image scale 1 → 1.06\n  bannerMs: 300, // marquee fade\n  marqueeMs: 6000, // one loop of the banner\n}"
+   "motion": "export const MOTION = {\n  ease: [0.16, 1, 0.3, 1], // line, title roll and image zoom\n  rollMs: 600, // title roll + line draw\n  zoomMs: 900, // image scale 1 → 1.06\n  bannerMs: 300, // marquee fade\n  marqueeMs: 6000, // one loop of the banner\n}",
+   "free": false
   },
   {
    "slug": "capabilities-accordion",
@@ -832,7 +967,8 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  ease: [0.16, 1, 0.3, 1],\n  unfoldMs: 500, // answer height + fade\n  iconMs: 400, // plus → minus\n}"
+   "motion": "export const MOTION = {\n  ease: [0.16, 1, 0.3, 1],\n  unfoldMs: 500, // answer height + fade\n  iconMs: 400, // plus → minus\n}",
+   "free": false
   },
   {
    "slug": "nav-letter-roll",
@@ -858,7 +994,9 @@
    ],
    "assets": [],
    "tunable": true,
-   "motion": "export const MOTION = {\n  ease: [0.16, 1, 0.3, 1],\n  rollMs: 500, // each letter's roll\n  stagger: 25, // ms between letters\n}"
+   "motion": "export const MOTION = {\n  ease: [0.16, 1, 0.3, 1],\n  rollMs: 500, // each letter's roll\n  stagger: 25, // ms between letters\n}",
+   "free": true,
+   "code": "import { useEffect, useState } from 'react'\nimport { motion } from 'motion/react'\n\n// ── Sound: tiny Web Audio cues, synthesized in code (no files). A cue only plays right after a real visitor input\n// inside this component (auto-played intros stay silent) and never under an element with data-sound=\"off\".\nconst SND = typeof window === 'undefined' ? null : (window.__cueIn ||= (() => {\n  const s = { t: -1e9, el: null, path: null, down: null, last: {} }\n  const on = ev => {\n    if (!ev.isTrusted) return\n    s.t = performance.now()\n    const held = ev.type === 'pointermove' && ev.buttons && s.down // a drag keeps belonging to where it started\n    if (ev.type === 'pointerdown') s.down = ev.composedPath()\n    s.path = held ? s.down : (ev.type === 'pointerup' && s.down) || ev.composedPath(); s.el = s.path[0]\n    if (ev.type === 'pointerup') s.down = null\n  }\n  for (const e of ['pointerdown', 'pointermove', 'pointerup', 'keydown', 'wheel', 'touchstart']) addEventListener(e, on, { capture: true, passive: true })\n  return s\n})())\nfunction cue(root, kind, { sound = 1, volume = 60, gap = 28, pitch = 1 } = {}) {\n  const S = SND, now = performance.now()\n  if (!S || !sound || !volume || !root || !(S.path?.includes(root) || root.contains?.(S.el)) || now - S.t > 3000 || root.closest?.('[data-sound=\"off\"]')) return\n  if (now - (S.last[kind] || 0) < gap) return; S.last[kind] = now\n  const ac = (S.ac ||= new (window.AudioContext || window.webkitAudioContext)()); if (ac.state === 'suspended') ac.resume()\n  const t = ac.currentTime, out = ac.createGain(); out.gain.value = (volume / 100) * 0.45; out.connect(ac.destination)\n  const tone = (f0, f1, dur, type = 'sine', g = 1, at = 0) => {\n    const o = ac.createOscillator(), v = ac.createGain(); o.type = type\n    o.frequency.setValueAtTime(f0 * pitch, t + at); o.frequency.exponentialRampToValueAtTime(f1 * pitch, t + at + dur)\n    v.gain.setValueAtTime(0.0001, t + at); v.gain.exponentialRampToValueAtTime(g, t + at + 0.005); v.gain.exponentialRampToValueAtTime(0.0001, t + at + dur)\n    o.connect(v).connect(out); o.start(t + at); o.stop(t + at + dur + 0.03)\n  }\n  const air = (dur, f0, f1, g = 1) => { // filtered noise sweep\n    const b = ac.createBuffer(1, Math.ceil(ac.sampleRate * dur), ac.sampleRate), d = b.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1\n    const src = ac.createBufferSource(), bp = ac.createBiquadFilter(), v = ac.createGain(); src.buffer = b; bp.type = 'bandpass'; bp.Q.value = 1.4\n    bp.frequency.setValueAtTime(f0, t); bp.frequency.exponentialRampToValueAtTime(f1, t + dur)\n    v.gain.setValueAtTime(0.0001, t); v.gain.linearRampToValueAtTime(g, t + dur * 0.35); v.gain.exponentialRampToValueAtTime(0.0001, t + dur)\n    src.connect(bp).connect(v).connect(out); src.start(t)\n  }\n  ;({\n    tick: () => tone(2600, 1900, 0.022, 'triangle', 0.3),   // detent, step, letter\n    tap: () => tone(640, 520, 0.07, 'sine', 0.6),           // press\n    pop: () => tone(900, 460, 0.09, 'sine', 0.7),           // something opens / appears\n    thunk: () => tone(170, 85, 0.14, 'sine', 0.9),          // weight, impact\n    whoosh: () => air(0.3, 500, 2600, 0.4),                 // big move in\n    swish: () => air(0.18, 2200, 800, 0.28),                // quick move / close\n    rise: () => tone(300, 780, 0.55, 'sine', 0.3),          // hold / charge\n    fall: () => tone(720, 280, 0.32, 'sine', 0.26),         // release / cancel\n    chime: () => { tone(1046, 1046, 0.5, 'sine', 0.42); tone(1568, 1568, 0.65, 'sine', 0.28, 0.07) }, // done\n    blip: () => tone(1320, 1320, 0.045, 'square', 0.08),    // status, typing\n  })[kind]?.()\n}\n\n// Menu links: each link is split into letters (the live page renders H·o·m·e as separate nodes).\n// On hover every letter rolls up to an identical copy, 25 ms apart left → right, so the word ripples instead of jumping.\nconst LINKS = ['Home', 'Work', 'Contact']\n\n// Motion values. Phation Studio exports this object: paste a tuned one over it.\n// Look values (not motion): colour + layout variants. Studio › Look sets them.\nexport const ACCENTS = [{ label: 'Blue', color: '#0a72ef' }, { label: 'Green', color: '#15803d' }, { label: 'Coral', color: '#d9442a' }, { label: 'Violet', color: '#6d28d9' }]\nexport const LOOK = { accent: 0 }\nconst accentOf = m => (ACCENTS[m.accent] ?? ACCENTS[0]).color\n\nexport const MOTION = {\n  ease: [0.16, 1, 0.3, 1],\n  rollMs: 500, // each letter's roll\n  stagger: 25, // ms between letters\n}\nexport const params = {\n  ease: { type: 'ease', label: 'Roll curve', value: MOTION.ease },\n  rollMs: { type: 'ms', label: 'Letter roll', value: MOTION.rollMs, min: 150, max: 1200 },\n  stagger: { type: 'ms', label: 'Letter stagger', value: MOTION.stagger, min: 0, max: 120, step: 5 },\n  accent: { type: 'pick', label: 'Colour', value: LOOK.accent, options: ACCENTS },\n  sound: { type: 'pick', label: 'Sound', value: 1, toggle: true, group: 'Sound', options: [{ label: 'Off' }, { label: 'On' }] },\n  volume: { type: 'num', label: 'Volume', value: 60, min: 0, max: 100, unit: '%', group: 'Sound' },\n}\n\nfunction Link({ word, on, set, m }) {\n  const ACCENT = accentOf(m)\n  return (\n    <a href=\"#\" onClick={e => e.preventDefault()} onPointerEnter={e => { cue(e.currentTarget, 'tick', { ...m, gap: 60 }); set(word) }} onPointerLeave={() => set(null)} onFocus={() => set(word)} onBlur={() => set(null)}\n      style={{ display: 'inline-flex', color: 'var(--demo-ink, #161618)', textDecoration: 'none', font: '500 48px/1 Inter, system-ui, sans-serif', letterSpacing: '-.03em', overflow: 'hidden', height: 52, paddingTop: 2 }}>\n      {word.split('').map((c, i) => (\n        <span key={i} style={{ position: 'relative', display: 'inline-block' }}>\n          <motion.span style={{ display: 'block' }} animate={{ y: on ? '-110%' : '0%' }} transition={{ duration: m.rollMs / 1000, ease: m.ease, delay: i * m.stagger / 1000 }}>{c}</motion.span>\n          <motion.span style={{ position: 'absolute', left: 0, top: 0, display: 'block', color: ACCENT }} initial={false} animate={{ y: on ? '0%' : '110%' }} transition={{ duration: m.rollMs / 1000, ease: m.ease, delay: i * m.stagger / 1000 }}>{c}</motion.span>\n        </span>\n      ))}\n    </a>\n  )\n}\n\nexport default function NavLetterRoll({ values }) {\n  const m = { ...MOTION, ...LOOK, ...values }\n  const [hot, setHot] = useState(null)\n  useEffect(() => {\n    if (window.__phAuto) return // Auto play acts it out instead\n    const ids = LINKS.map((w, k) => setTimeout(() => setHot(w), 400 + k * 600)).concat(setTimeout(() => setHot(null), 400 + 3 * 600))\n    return () => ids.forEach(clearTimeout)\n  }, [])\n  return (\n    <div style={{ display: 'grid', gap: 6, padding: '28px 32px', borderRadius: 22, background: 'var(--demo-card, #fff)', boxShadow: 'var(--demo-sh-card, 0 0 0 1px rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.04), 0 12px 28px -10px rgba(0,0,0,.14))', width: 320 }}>\n      <div style={{ font: '500 12px/1 Inter, sans-serif', letterSpacing: '.08em', color: 'var(--demo-ink2, #66666d)', textTransform: 'uppercase', marginBottom: 10 }}>Quick links</div>\n      {LINKS.map(w => <Link key={w} word={w} on={hot === w} set={setHot} m={m} />)}\n    </div>\n  )\n}\n"
   }
  ]
 }

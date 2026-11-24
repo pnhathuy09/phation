@@ -1,6 +1,6 @@
 # Installing the Phation MCP server (for AI agents)
 
-Phation is a local stdio MCP server published on npm as `phation`. It needs Node 18 or newer. No API key or account is needed.
+Phation is a local stdio MCP server published on npm as `phation`. It needs Node 18 or newer. The MCP server is part of Phation Pro: ask the user for their license key (from https://phation.app/pricing) and put it in `PHATION_KEY`. Without a key the server starts, but every tool answers with how to get a license.
 
 ## 1. Add the server
 
@@ -11,7 +11,8 @@ Add this entry to the MCP settings file (for Cline: `cline_mcp_settings.json`):
   "mcpServers": {
     "phation": {
       "command": "npx",
-      "args": ["-y", "phation", "mcp"]
+      "args": ["-y", "phation", "mcp"],
+      "env": { "PHATION_KEY": "<license-key>" }
     }
   }
 }
@@ -26,16 +27,4 @@ Call the `get_standard` tool with no arguments. It returns the core Phation moti
 ## 3. Optional
 
 - `install_standard` writes the rules into the current project for the agent in use. Run it only if the user asks.
-- Tools marked Pro (`add_motion`, `animate_ui`, `audit_motion`) need a license key in the `PHATION_KEY` environment variable. Without it they reply with how to get one. Every other tool works without a key.
-
-```json
-{
-  "mcpServers": {
-    "phation": {
-      "command": "npx",
-      "args": ["-y", "phation", "mcp"],
-      "env": { "PHATION_KEY": "<license-key>" }
-    }
-  }
-}
-```
+- If the user has no license, the free CLI still works in a terminal: `npx phation search <words>`, `npx phation show <slug>`, `npx phation init <agent>`, and `npx phation add <slug>` for the free components (buy-morph, hold-redeem, scroll-text-reveal, nav-letter-roll).

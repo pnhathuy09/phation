@@ -8,8 +8,8 @@
 //   phation standard [section]                                       print the standard (or one section, e.g. springs)
 //   phation audit <url> [--do click:#buy]… [--root main] [--mobile] [--dark] [--json] [--shots dir] [--no-reduced]
 //   phation animate <file|folder> [--feel snappy] [--only press] [--role 12=button] [--apply] [--write]   animate your own UI
-//   phation mcp                                                       start the MCP server (stdio)
-//   phation login <license-key> | logout | whoami                     Pro: add, audit, animate (https://phation.app/pricing)
+//   phation mcp                                                       start the MCP server (stdio) · Pro
+//   phation login <license-key> | logout | whoami                     Pro: MCP server, add (non-free entries), audit, animate (https://phation.app/pricing)
 import { ENTRIES, CATEGORIES, search, get, suggest, add, summary, install, standardSection, TOOLS, login, logout, licenseKey, requirePro, motionBlock } from '../lib.mjs'
 
 const [cmd, ...rest] = process.argv.slice(2)
@@ -41,7 +41,7 @@ switch (cmd) {
     for (const [k, v] of Object.entries(e.spec)) console.log(`  ${k.padEnd(16)} ${v}`)
     if (motionBlock(e)) console.log(`\n${motionBlock(e)}`)
     console.log(`\n  file  ${e.file} · needs ${e.dependencies.join(', ')}${e.assets.length ? ` · ${e.assets.length} media file(s)` : ''}`)
-    console.log(`  add   npx phation add ${e.slug}  (Pro)`)
+    console.log(`  add   npx phation add ${e.slug}  (${e.free ? 'free, MIT' : 'Pro'})`)
     break
   }
   case 'add': {
@@ -108,6 +108,6 @@ switch (cmd) {
     break
   }
   default:
-    console.log(`phation list [category] | search <words> | show <slug> | add <slug> [--from <studio link>] [--dir src/motion] [--public public] [--force]\n          init [${Object.keys(TOOLS).filter(k => !TOOLS[k].hidden).join('|')}|all] [--force] | standard [section]\n          audit <url> [--do click:#buy]… [--root sel] [--mobile] [--json]\n          animate <file|folder> [--feel fluid] [--only press] [--apply] [--write]\n          mcp   (start the MCP server) | login <license-key> | logout | whoami\n\nFree: list, search, show, standard, init. Pro: add, audit, animate.`)
+    console.log(`phation list [category] | search <words> | show <slug> | add <slug> [--from <studio link>] [--dir src/motion] [--public public] [--force]\n          init [${Object.keys(TOOLS).filter(k => !TOOLS[k].hidden).join('|')}|all] [--force] | standard [section]\n          audit <url> [--do click:#buy]… [--root sel] [--mobile] [--json]\n          animate <file|folder> [--feel fluid] [--only press] [--apply] [--write]\n          mcp   (start the MCP server) | login <license-key> | logout | whoami\n\nFree: list, search, show, standard, init, add for free entries (${ENTRIES.filter(e => e.free).map(e => e.slug).join(', ')}). Pro: MCP server, add for the rest, audit, animate.`)
     if (cmd && cmd !== 'help') process.exit(1)
 }

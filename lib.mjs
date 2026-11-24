@@ -13,12 +13,14 @@ const FULL = path.join(HERE, 'data/entries.full.json')
 const LOCAL = fs.existsSync(FULL) && !process.env.PHATION_REMOTE
 const DATA = JSON.parse(fs.readFileSync(LOCAL ? FULL : path.join(HERE, 'data/entries.json'), 'utf8'))
 export const ENTRIES = DATA.entries
+// Free entries ship their source (MIT) in the package and the public repo; `add` works for them without a key.
+export const FREE = ENTRIES.filter(e => e.free).map(e => e.slug)
 export const CATEGORIES = DATA.categories
 export const SITE = 'https://phation.app'
 const API = process.env.PHATION_API || SITE
 
 // ---------------- Pro license ----------------
-// Free: list, search, show (spec + MOTION values), the standard, init. Pro: add, source, audit, animate.
+// Free (CLI): list, search, show (spec + MOTION values), the standard, init, add for free entries. Pro: the MCP server, add/source for the rest, audit, animate.
 // The key comes from PHATION_KEY or ~/.config/phation/license.json (written by `phation login <key>`).
 const CONF = path.join(process.env.XDG_CONFIG_HOME || path.join(os.homedir(), '.config'), 'phation', 'license.json')
 const readConf = () => { try { return JSON.parse(fs.readFileSync(CONF, 'utf8')) } catch { return null } }

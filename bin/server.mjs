@@ -4,16 +4,16 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod'
-import { ENTRIES, CATEGORIES, search, get, summary, suggest, add, STANDARD, CORE, STANDARD_VERSION, standardSection, install, TOOLS, getCode, motionBlock, requirePro } from '../lib.mjs'
+import { ENTRIES, CATEGORIES, search, get, summary, suggest, add, STANDARD, CORE, STANDARD_VERSION, standardSection, install, TOOLS, getCode, motionBlock, requirePro, FREE } from '../lib.mjs'
 
 const server = new McpServer(
-  { name: 'phation', version: '0.1.1' },
+  { name: 'phation', version: '0.2.0' },
   {
     instructions:
       'Phation: tested React + Motion interactions, a motion standard and a frame-by-frame audit. Work token-lean. ' +
       'For any motion task: search_motions → add_motion (writes the file to disk; never retype it) → edit only its MOTION object, copy and styles → audit_motion, fix blockers, re-run. ' +
       'A Studio link (…/m/<slug>?…) goes in add_motion `from`. get_motion returns the spec and MOTION values; pass code: true only if you must read the source. ' +
-      'Free: list_motions, search_motions, get_motion (spec + MOTION values), get_standard, install_standard. Pro (license key via `npx phation login <key>` or PHATION_KEY): add_motion, get_motion code, audit_motion, animate_ui. If a Pro tool answers with the Pro message, tell the user once and continue with the free tools (use the spec values by hand). ' +
+      'The MCP server is part of Phation Pro (license key via `npx phation login <key>` or PHATION_KEY). Without a key every tool answers with the Pro message: tell the user once, then point them to the free CLI (`npx phation search`, `show`, `init`, and `add` for the free entries). ' +
       'Rules: get_standard returns the ~600-token core; ask for one section ("springs", "recipes", "accessibility") when you need more, "all" only if asked. ' +
       'To animate the user\'s existing screens: animate_ui (plan) → confirm roles → animate_ui apply → audit_motion. Report the values you used and any rule you broke on purpose.',
   },
@@ -22,6 +22,11 @@ const text = v => ({ content: [{ type: 'text', text: typeof v === 'string' ? v :
 // one line per entry: what the model needs to choose, nothing more
 const line = e => `${e.slug} · ${e.name} · ${e.category}${(e.tags || []).length ? ' · ' + e.tags.join(', ') : ''}`
 const fail = m => ({ content: [{ type: 'text', text: m }], isError: true })
+// Every MCP tool is Pro. The server still starts and lists its tools without a key, so hosts and registries can inspect it.
+const FREE_CLI = `\nFree without a key: npx phation search <words> · npx phation show <slug> · npx phation init <agent> · npx phation add <slug> for the free entries (${FREE.join(', ')}).`
+const pro = fn => async (args, extra) => { try { await requirePro() } catch (e) { return fail(e.message + FREE_CLI) } return fn(args, extra) }
+const register = server.registerTool.bind(server)
+server.registerTool = (name, config, handler) => register(name, config, pro(handler))
 
 server.registerTool('list_motions', {
   title: 'List motions',
@@ -50,7 +55,7 @@ server.registerTool('get_motion', {
   if (!e) return fail(`No entry "${slug}".${suggest(slug).length ? ' Did you mean: ' + suggest(slug).join(', ') + '?' : ''}`)
   const head = [`${e.slug} · ${e.name} · ${e.file}`, e.description, `spec: ${Object.entries(e.spec).map(([k, v]) => `${k} ${v}`).join(' · ')}`,
     `deps: ${(e.dependencies || []).join(', ')}${(e.assets || []).length ? ` · media: ${e.assets.join(', ')}` : ''}`, '', motionBlock(e)].join('\n')
-  if (!code) return text(`${head}\n\n(add_motion writes the file; pass code: true to read the source. Both are Pro.)`)
+  if (!code) return text(`${head}\n\n(add_motion writes the file; pass code: true to read the source.)`)
   try { return text(`${head}\n\n// ${e.file}\n${await getCode(e)}`) } catch (err) { return fail(`${head}\n\n${err.message}`) }
 })
 
@@ -106,7 +111,6 @@ server.registerTool('audit_motion', {
   annotations: { readOnlyHint: true, openWorldHint: true },
 }, async args => {
   try {
-    await requirePro()
     const { audit, formatReport } = await import('../audit.mjs')
     const r = await audit(args.url, args)
     if (r.status === 'ERROR') return fail(formatReport(r))
@@ -130,7 +134,7 @@ server.registerTool('animate_ui', {
   },
   annotations: { destructiveHint: false },
 }, async args => {
-  try { await requirePro(); const { animate } = await import('../animate/index.mjs'); return text(animate(args.path, args).text) } catch (e) { return fail(e.message) }
+  try { const { animate } = await import('../animate/index.mjs'); return text(animate(args.path, args).text) } catch (e) { return fail(e.message) }
 })
 
 server.registerResource('standard', 'phation://standard', { title: 'Phation Standard', description: 'Rules for product UI motion by Pham Huy', mimeType: 'text/markdown' },
