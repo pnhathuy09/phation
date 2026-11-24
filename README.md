@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="media/before-after.gif" alt="The same prompt, run by a default agent (41/100) and by an agent with Phation (100/100)" width="860">
+  <img src="media/before-after.gif" alt="The same add-to-cart prompt: generic AI output scores 41/100, the same agent with the Phation skill scores 100/100" width="860">
 </p>
 
 <h1 align="center">Phation</h1>
